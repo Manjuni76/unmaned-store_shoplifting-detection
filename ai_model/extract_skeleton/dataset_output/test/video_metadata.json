@@ -1,0 +1,1451 @@
+{
+  "normal_shopping_001_C_1_1_10_BU_DYB_10-09_12-02-54_CB_DF1_F1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_10_BU_DYB_10-09_12-02-54_CB_DF1_F1_F1.mp4",
+    "category": "normal",
+    "frame_count": 33,
+    "person_count": 11,
+    "video_index": 1,
+    "label_start_idx": 0,
+    "label_end_idx": 32
+  },
+  "normal_shopping_002_C_1_1_35_BU_DYB_10-12_11-33-21_CE_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_35_BU_DYB_10-12_11-33-21_CE_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 109,
+    "person_count": 9,
+    "video_index": 2,
+    "label_start_idx": 901,
+    "label_end_idx": 1009
+  },
+  "normal_shopping_003_C_1_1_19_BU_DYB_08_19_18_01_35_CE_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_19_BU_DYB_08_19_18_01_35_CE_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 126,
+    "person_count": 14,
+    "video_index": 3,
+    "label_start_idx": 1802,
+    "label_end_idx": 1927
+  },
+  "normal_shopping_004_C_1_1_35_BU_DYB_10-12_11-33-21_CD_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_35_BU_DYB_10-12_11-33-21_CD_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 10,
+    "person_count": 15,
+    "video_index": 4,
+    "label_start_idx": 2703,
+    "label_end_idx": 2712
+  },
+  "normal_shopping_005_C_1_1_2_BU_DYA_08-13_12-27-26_CF_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_2_BU_DYA_08-13_12-27-26_CF_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 276,
+    "person_count": 16,
+    "video_index": 5,
+    "label_start_idx": 3604,
+    "label_end_idx": 3879
+  },
+  "normal_shopping_006_C_1_1_13_BU_DYB_10-09_13-49-23_CF_DF1_F1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_13_BU_DYB_10-09_13-49-23_CF_DF1_F1_F1.mp4",
+    "category": "normal",
+    "frame_count": 110,
+    "person_count": 16,
+    "video_index": 6,
+    "label_start_idx": 4506,
+    "label_end_idx": 4615
+  },
+  "normal_shopping_007_C_1_1_17_BU_DYB_10-09_14-59-19_CE_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_17_BU_DYB_10-09_14-59-19_CE_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 901,
+    "person_count": 11,
+    "video_index": 7,
+    "label_start_idx": 5407,
+    "label_end_idx": 6307
+  },
+  "normal_shopping_008_C_1_1_36_BU_DYB_08_19_16_55_53_CD_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_36_BU_DYB_08_19_16_55_53_CD_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 2,
+    "person_count": 14,
+    "video_index": 8,
+    "label_start_idx": 6308,
+    "label_end_idx": 6309
+  },
+  "normal_shopping_009_C_2_2_10_BU_SYB_10-15_14-22-05_CB_RGB_DF1_F1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_10_BU_SYB_10-15_14-22-05_CB_RGB_DF1_F1_F1.mp4",
+    "category": "normal",
+    "frame_count": 150,
+    "person_count": 2,
+    "video_index": 9,
+    "label_start_idx": 7209,
+    "label_end_idx": 7358
+  },
+  "normal_shopping_010_C_2_2_17_BU_SYB_10-15_09-36-25_CB_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_17_BU_SYB_10-15_09-36-25_CB_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 187,
+    "person_count": 2,
+    "video_index": 10,
+    "label_start_idx": 7810,
+    "label_end_idx": 7996
+  },
+  "normal_shopping_011_C_2_2_40_BU_SMB_10-15_19-35-42_CD_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_40_BU_SMB_10-15_19-35-42_CD_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 241,
+    "person_count": 2,
+    "video_index": 11,
+    "label_start_idx": 8410,
+    "label_end_idx": 8650
+  },
+  "normal_shopping_012_C_2_2_36_BU_SYA_09-15_14-05-19_CA_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_36_BU_SYA_09-15_14-05-19_CA_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 238,
+    "person_count": 5,
+    "video_index": 12,
+    "label_start_idx": 9010,
+    "label_end_idx": 9247
+  },
+  "normal_shopping_013_C_2_2_33_BU_SMA_09-28_09-50-43_CB_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_33_BU_SMA_09-28_09-50-43_CB_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 105,
+    "person_count": 5,
+    "video_index": 13,
+    "label_start_idx": 9610,
+    "label_end_idx": 9714
+  },
+  "normal_shopping_014_C_2_2_10_BU_SMA_09-17_12-03-07_CD_RGB_DF1_F1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_10_BU_SMA_09-17_12-03-07_CD_RGB_DF1_F1_F1.mp4",
+    "category": "normal",
+    "frame_count": 10,
+    "person_count": 11,
+    "video_index": 14,
+    "label_start_idx": 10210,
+    "label_end_idx": 10219
+  },
+  "normal_shopping_015_C_2_2_10_BU_SMA_09-17_12-03-07_CC_RGB_DF1_F1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_10_BU_SMA_09-17_12-03-07_CC_RGB_DF1_F1_F1.mp4",
+    "category": "normal",
+    "frame_count": 49,
+    "person_count": 5,
+    "video_index": 15,
+    "label_start_idx": 10810,
+    "label_end_idx": 10858
+  },
+  "normal_shopping_016_C_1_1_12_BU_DYA_08-13_15-08-51_CD_DF1_F1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_01.매장이동_01.매장이동_1\\C_1_1_12_BU_DYA_08-13_15-08-51_CD_DF1_F1_M1.mp4",
+    "category": "normal",
+    "frame_count": 902,
+    "person_count": 21,
+    "video_index": 16,
+    "label_start_idx": 11411,
+    "label_end_idx": 12312
+  },
+  "normal_shopping_017_C_2_2_25_BU_SMA_09-28_15-06-26_CA_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_25_BU_SMA_09-28_15-06-26_CA_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 105,
+    "person_count": 9,
+    "video_index": 17,
+    "label_start_idx": 12313,
+    "label_end_idx": 12417
+  },
+  "normal_shopping_018_C_2_2_43_BU_DYA_07-30_16-20-20_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_43_BU_DYA_07-30_16-20-20_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 13,
+    "person_count": 6,
+    "video_index": 18,
+    "label_start_idx": 12913,
+    "label_end_idx": 12925
+  },
+  "normal_shopping_019_C_2_2_25_BU_SYA_08-29_17-05-20_CA_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_25_BU_SYA_08-29_17-05-20_CA_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 4,
+    "video_index": 19,
+    "label_start_idx": 13513,
+    "label_end_idx": 14112
+  },
+  "normal_shopping_020_C_2_2_36_BU_DYB_10-12_17-06-07_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_36_BU_DYB_10-12_17-06-07_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 212,
+    "person_count": 4,
+    "video_index": 20,
+    "label_start_idx": 14113,
+    "label_end_idx": 14324
+  },
+  "normal_shopping_021_C_2_2_31_BU_DYB_10-08_14-49-14_CD_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_31_BU_DYB_10-08_14-49-14_CD_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 227,
+    "person_count": 2,
+    "video_index": 21,
+    "label_start_idx": 14713,
+    "label_end_idx": 14939
+  },
+  "normal_shopping_022_C_2_2_41_BU_SYA_09-15_14-12-56_CA_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_41_BU_SYA_09-15_14-12-56_CA_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 571,
+    "person_count": 7,
+    "video_index": 22,
+    "label_start_idx": 15313,
+    "label_end_idx": 15883
+  },
+  "normal_shopping_023_C_2_2_42_BU_SMA_09-28_10-08-40_CD_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_42_BU_SMA_09-28_10-08-40_CD_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 5,
+    "video_index": 23,
+    "label_start_idx": 15913,
+    "label_end_idx": 16512
+  },
+  "normal_shopping_024_C_2_2_26_BU_DYB_10-08_14-41-53_CD_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_26_BU_DYB_10-08_14-41-53_CD_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 271,
+    "person_count": 2,
+    "video_index": 24,
+    "label_start_idx": 16513,
+    "label_end_idx": 16783
+  },
+  "normal_shopping_025_C_2_2_14_BU_SYA_08-29_16-27-02_CC_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_14_BU_SYA_08-29_16-27-02_CC_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 166,
+    "person_count": 2,
+    "video_index": 25,
+    "label_start_idx": 17113,
+    "label_end_idx": 17278
+  },
+  "normal_shopping_026_C_2_2_26_BU_SYB_10-15_09-50-28_CD_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_26_BU_SYB_10-15_09-50-28_CD_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 46,
+    "person_count": 6,
+    "video_index": 26,
+    "label_start_idx": 17714,
+    "label_end_idx": 17759
+  },
+  "normal_shopping_027_C_2_2_39_BU_SMB_10-15_19-34-14_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_39_BU_SMB_10-15_19-34-14_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 179,
+    "person_count": 6,
+    "video_index": 27,
+    "label_start_idx": 18314,
+    "label_end_idx": 18492
+  },
+  "normal_shopping_028_C_2_3_42_BU_SYB_10-15_12-56-27_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_42_BU_SYB_10-15_12-56-27_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 230,
+    "person_count": 2,
+    "video_index": 28,
+    "label_start_idx": 18914,
+    "label_end_idx": 19143
+  },
+  "normal_shopping_029_C_2_2_45_BU_SMA_09-28_10-11-57_CD_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_45_BU_SMA_09-28_10-11-57_CD_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 601,
+    "person_count": 6,
+    "video_index": 29,
+    "label_start_idx": 19515,
+    "label_end_idx": 20115
+  },
+  "normal_shopping_030_C_2_2_1_BU_SYA_09-17_15-54-44_CC_RGB_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_02.선택_1\\C_2_2_1_BU_SYA_09-17_15-54-44_CC_RGB_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 386,
+    "person_count": 6,
+    "video_index": 30,
+    "label_start_idx": 20116,
+    "label_end_idx": 20501
+  },
+  "normal_shopping_031_C_2_3_44_BU_SMB_10-15_19-16-58_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_44_BU_SMB_10-15_19-16-58_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 481,
+    "person_count": 6,
+    "video_index": 31,
+    "label_start_idx": 20717,
+    "label_end_idx": 21197
+  },
+  "normal_shopping_032_C_2_3_45_BU_SYB_10-15_13-00-00_CD_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_45_BU_SYB_10-15_13-00-00_CD_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 261,
+    "person_count": 2,
+    "video_index": 32,
+    "label_start_idx": 21317,
+    "label_end_idx": 21577
+  },
+  "normal_shopping_033_C_2_3_30_BU_SYB_09-16_09-10-19_CA_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_30_BU_SYB_09-16_09-10-19_CA_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 282,
+    "person_count": 2,
+    "video_index": 33,
+    "label_start_idx": 21917,
+    "label_end_idx": 22198
+  },
+  "normal_shopping_034_C_2_3_52_BU_DYB_10-23_15-11-23_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_52_BU_DYB_10-23_15-11-23_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 249,
+    "person_count": 5,
+    "video_index": 34,
+    "label_start_idx": 22518,
+    "label_end_idx": 22766
+  },
+  "normal_shopping_035_C_2_3_43_BU_DYB_10-12_17-24-58_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_43_BU_DYB_10-12_17-24-58_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 222,
+    "person_count": 5,
+    "video_index": 35,
+    "label_start_idx": 23119,
+    "label_end_idx": 23340
+  },
+  "normal_shopping_036_C_2_3_16_BU_SMA_09-15_17-04-31_CD_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_16_BU_SMA_09-15_17-04-31_CD_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 3,
+    "video_index": 36,
+    "label_start_idx": 23720,
+    "label_end_idx": 24319
+  },
+  "normal_shopping_037_C_2_3_48_BU_SMB_10-15_16-39-22_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_48_BU_SMB_10-15_16-39-22_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 3,
+    "person_count": 5,
+    "video_index": 37,
+    "label_start_idx": 24320,
+    "label_end_idx": 24322
+  },
+  "normal_shopping_038_C_2_3_12_BU_DYB_10-12_15-31-55_CC_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_12_BU_DYB_10-12_15-31-55_CC_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 204,
+    "person_count": 2,
+    "video_index": 38,
+    "label_start_idx": 24920,
+    "label_end_idx": 25123
+  },
+  "normal_shopping_039_C_2_3_20_BU_DYB_10-12_15-41-30_CB_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_20_BU_DYB_10-12_15-41-30_CB_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 91,
+    "person_count": 13,
+    "video_index": 39,
+    "label_start_idx": 25521,
+    "label_end_idx": 25611
+  },
+  "normal_shopping_040_C_2_3_15_BU_SYB_10-16_09-35-45_CC_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_15_BU_SYB_10-16_09-35-45_CC_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 211,
+    "person_count": 4,
+    "video_index": 40,
+    "label_start_idx": 26121,
+    "label_end_idx": 26331
+  },
+  "normal_shopping_041_C_2_3_23_BU_SMA_09-28_10-20-02_CC_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_23_BU_SMA_09-28_10-20-02_CC_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 299,
+    "person_count": 2,
+    "video_index": 41,
+    "label_start_idx": 26721,
+    "label_end_idx": 27019
+  },
+  "normal_shopping_042_C_2_3_50_BU_SYB_10-15_17-10-54_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_50_BU_SYB_10-15_17-10-54_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 227,
+    "person_count": 2,
+    "video_index": 42,
+    "label_start_idx": 27321,
+    "label_end_idx": 27547
+  },
+  "normal_shopping_043_C_2_3_16_BU_SMA_09-15_17-04-31_CA_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_16_BU_SMA_09-15_17-04-31_CA_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 228,
+    "person_count": 2,
+    "video_index": 43,
+    "label_start_idx": 27921,
+    "label_end_idx": 28148
+  },
+  "normal_shopping_044_C_2_3_44_BU_DYB_10-12_17-26-12_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_44_BU_DYB_10-12_17-26-12_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 10,
+    "person_count": 4,
+    "video_index": 44,
+    "label_start_idx": 28521,
+    "label_end_idx": 28530
+  },
+  "normal_shopping_045_C_2_3_51_BU_DYA_07-30_17-27-21_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_51_BU_DYA_07-30_17-27-21_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 261,
+    "person_count": 5,
+    "video_index": 45,
+    "label_start_idx": 29121,
+    "label_end_idx": 29381
+  },
+  "normal_shopping_046_C_2_3_36_BU_SYA_09-15_14-23-28_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_36_BU_SYA_09-15_14-23-28_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 251,
+    "person_count": 2,
+    "video_index": 46,
+    "label_start_idx": 29721,
+    "label_end_idx": 29971
+  },
+  "normal_shopping_047_C_2_3_39_BU_SYB_10-15_13-30-41_CA_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_39_BU_SYB_10-15_13-30-41_CA_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 6,
+    "person_count": 4,
+    "video_index": 47,
+    "label_start_idx": 30321,
+    "label_end_idx": 30326
+  },
+  "normal_shopping_048_C_2_3_4_BU_SMB_10-15_14-59-22_CA_RGB_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_4_BU_SMB_10-15_14-59-22_CA_RGB_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 200,
+    "person_count": 3,
+    "video_index": 48,
+    "label_start_idx": 30922,
+    "label_end_idx": 31121
+  },
+  "normal_shopping_049_C_2_3_23_BU_SMA_09-28_10-20-02_CB_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_03.시험_1\\C_2_3_23_BU_SMA_09-28_10-20-02_CB_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 91,
+    "person_count": 6,
+    "video_index": 49,
+    "label_start_idx": 31522,
+    "label_end_idx": 31612
+  },
+  "normal_shopping_050_C_2_4_20_BU_SMC_08-20_17-45-43_CB_RGB_DF1_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_20_BU_SMC_08-20_17-45-43_CB_RGB_DF1_F2.mp4",
+    "category": "normal",
+    "frame_count": 517,
+    "person_count": 1,
+    "video_index": 50,
+    "label_start_idx": 32122,
+    "label_end_idx": 32638
+  },
+  "normal_shopping_051_C_2_4_23_BU_SMA_09-28_11-22-26_CD_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_23_BU_SMA_09-28_11-22-26_CD_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 52,
+    "person_count": 6,
+    "video_index": 51,
+    "label_start_idx": 32723,
+    "label_end_idx": 32774
+  },
+  "normal_shopping_052_C_2_4_47_BU_DYB_10-20_15-30-29_CC_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_47_BU_DYB_10-20_15-30-29_CC_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 98,
+    "person_count": 12,
+    "video_index": 52,
+    "label_start_idx": 33323,
+    "label_end_idx": 33420
+  },
+  "normal_shopping_053_C_2_4_10_BU_DYB_10-10_11-04-29_CD_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_10_BU_DYB_10-10_11-04-29_CD_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 548,
+    "person_count": 11,
+    "video_index": 53,
+    "label_start_idx": 33923,
+    "label_end_idx": 34470
+  },
+  "normal_shopping_054_C_2_4_20_BU_SMA_09-28_11-15-21_CB_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_20_BU_SMA_09-28_11-15-21_CB_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 53,
+    "person_count": 5,
+    "video_index": 54,
+    "label_start_idx": 34523,
+    "label_end_idx": 34575
+  },
+  "normal_shopping_055_C_2_4_26_BU_SMC_08-20_17-10-37_CB_RGB_DF1_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_26_BU_SMC_08-20_17-10-37_CB_RGB_DF1_M3.mp4",
+    "category": "normal",
+    "frame_count": 543,
+    "person_count": 1,
+    "video_index": 55,
+    "label_start_idx": 35124,
+    "label_end_idx": 35666
+  },
+  "normal_shopping_056_C_2_4_18_BU_SMA_09-28_11-08-07_CC_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_18_BU_SMA_09-28_11-08-07_CC_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 221,
+    "person_count": 2,
+    "video_index": 56,
+    "label_start_idx": 35724,
+    "label_end_idx": 35944
+  },
+  "normal_shopping_057_C_2_4_32_BU_SMC_08-20_16-56-25_CC_RGB_DF1_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_32_BU_SMC_08-20_16-56-25_CC_RGB_DF1_M3.mp4",
+    "category": "normal",
+    "frame_count": 514,
+    "person_count": 1,
+    "video_index": 57,
+    "label_start_idx": 36325,
+    "label_end_idx": 36838
+  },
+  "normal_shopping_058_C_2_4_13_BU_SMC_08-20_17-26-37_CA_RGB_DF1_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_13_BU_SMC_08-20_17-26-37_CA_RGB_DF1_F2.mp4",
+    "category": "normal",
+    "frame_count": 506,
+    "person_count": 1,
+    "video_index": 58,
+    "label_start_idx": 36925,
+    "label_end_idx": 37430
+  },
+  "normal_shopping_059_C_2_4_17_BU_SMC_08-20_17-38-15_CC_RGB_DF1_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_17_BU_SMC_08-20_17-38-15_CC_RGB_DF1_F2.mp4",
+    "category": "normal",
+    "frame_count": 525,
+    "person_count": 1,
+    "video_index": 59,
+    "label_start_idx": 37525,
+    "label_end_idx": 38049
+  },
+  "normal_shopping_060_C_2_4_43_BU_SYB_10-16_14-25-24_CD_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_43_BU_SYB_10-16_14-25-24_CD_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 166,
+    "person_count": 4,
+    "video_index": 60,
+    "label_start_idx": 38125,
+    "label_end_idx": 38290
+  },
+  "normal_shopping_061_C_2_4_35_BU_SMC_08-20_15-12-32_CB_RGB_DF1_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_35_BU_SMC_08-20_15-12-32_CB_RGB_DF1_M3.mp4",
+    "category": "normal",
+    "frame_count": 496,
+    "person_count": 1,
+    "video_index": 61,
+    "label_start_idx": 38725,
+    "label_end_idx": 39220
+  },
+  "normal_shopping_062_C_2_4_3_BU_SMB_10-16_16-03-31_CB_RGB_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_3_BU_SMB_10-16_16-03-31_CB_RGB_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 202,
+    "person_count": 5,
+    "video_index": 62,
+    "label_start_idx": 39325,
+    "label_end_idx": 39526
+  },
+  "normal_shopping_063_C_2_4_24_BU_SMB_10-16_17-51-53_CC_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_24_BU_SMB_10-16_17-51-53_CC_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 209,
+    "person_count": 3,
+    "video_index": 63,
+    "label_start_idx": 39925,
+    "label_end_idx": 40133
+  },
+  "normal_shopping_064_C_2_4_44_BU_SYB_10-16_14-27-02_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_44_BU_SYB_10-16_14-27-02_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 588,
+    "person_count": 8,
+    "video_index": 64,
+    "label_start_idx": 40526,
+    "label_end_idx": 41113
+  },
+  "normal_shopping_065_C_2_4_21_BU_SMC_08-20_17-47-55_CB_RGB_DF1_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_21_BU_SMC_08-20_17-47-55_CB_RGB_DF1_F2.mp4",
+    "category": "normal",
+    "frame_count": 537,
+    "person_count": 1,
+    "video_index": 65,
+    "label_start_idx": 41126,
+    "label_end_idx": 41662
+  },
+  "normal_shopping_066_C_2_4_11_BU_SMC_08-20_18-08-15_CB_RGB_DF1_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_11_BU_SMC_08-20_18-08-15_CB_RGB_DF1_M2.mp4",
+    "category": "normal",
+    "frame_count": 529,
+    "person_count": 1,
+    "video_index": 66,
+    "label_start_idx": 41727,
+    "label_end_idx": 42255
+  },
+  "normal_shopping_067_C_2_4_32_BU_DYA_07-30_20-40-56_CB_RGB_DF1_F3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_32_BU_DYA_07-30_20-40-56_CB_RGB_DF1_F3_M3.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 9,
+    "video_index": 67,
+    "label_start_idx": 42327,
+    "label_end_idx": 42926
+  },
+  "normal_shopping_068_C_2_4_28_BU_SMC_08-20_17-17-06_CA_RGB_DF1_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_28_BU_SMC_08-20_17-17-06_CA_RGB_DF1_M3.mp4",
+    "category": "normal",
+    "frame_count": 573,
+    "person_count": 1,
+    "video_index": 68,
+    "label_start_idx": 42927,
+    "label_end_idx": 43499
+  },
+  "normal_shopping_069_C_2_4_15_BU_DYA_07-26_17-38-40_CC_RGB_DF1_F2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_04.구매_1\\C_2_4_15_BU_DYA_07-26_17-38-40_CC_RGB_DF1_F2_M2.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 3,
+    "video_index": 69,
+    "label_start_idx": 43527,
+    "label_end_idx": 44126
+  },
+  "normal_shopping_070_C_2_5_93_BU_DYB_10-23_13-39-29_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_05.반품_2\\C_2_5_93_BU_DYB_10-23_13-39-29_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 134,
+    "person_count": 9,
+    "video_index": 70,
+    "label_start_idx": 44127,
+    "label_end_idx": 44260
+  },
+  "normal_shopping_071_C_2_5_7_BU_DYA_08-24_17-36-53_CC_RGB_DF1_M2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_05.반품_2\\C_2_5_7_BU_DYA_08-24_17-36-53_CC_RGB_DF1_M2_F2.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 3,
+    "video_index": 71,
+    "label_start_idx": 44727,
+    "label_end_idx": 45326
+  },
+  "normal_shopping_072_C_2_5_84_BU_DYB_10-23_13-28-23_CA_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_05.반품_2\\C_2_5_84_BU_DYB_10-23_13-28-23_CA_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 5,
+    "video_index": 72,
+    "label_start_idx": 45327,
+    "label_end_idx": 45926
+  },
+  "normal_shopping_073_C_2_6_22_BU_DYB_10-12_16-26-19_CD_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_22_BU_DYB_10-12_16-26-19_CD_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 582,
+    "person_count": 4,
+    "video_index": 73,
+    "label_start_idx": 45927,
+    "label_end_idx": 46508
+  },
+  "normal_shopping_074_C_2_6_39_BU_SMA_09-28_14-41-58_CA_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_39_BU_SMA_09-28_14-41-58_CA_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 244,
+    "person_count": 5,
+    "video_index": 74,
+    "label_start_idx": 46528,
+    "label_end_idx": 46771
+  },
+  "normal_shopping_075_C_2_6_20_BU_SYA_09-13_15-55-32_CB_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_20_BU_SYA_09-13_15-55-32_CB_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 12,
+    "person_count": 4,
+    "video_index": 75,
+    "label_start_idx": 47129,
+    "label_end_idx": 47140
+  },
+  "normal_shopping_076_C_2_6_21_BU_DYA_07-30_19-03-31_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_21_BU_DYA_07-30_19-03-31_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 247,
+    "person_count": 2,
+    "video_index": 76,
+    "label_start_idx": 47729,
+    "label_end_idx": 47975
+  },
+  "normal_shopping_077_C_2_6_38_BU_SMB_10-15_19-49-16_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_38_BU_SMB_10-15_19-49-16_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 246,
+    "person_count": 3,
+    "video_index": 77,
+    "label_start_idx": 48329,
+    "label_end_idx": 48574
+  },
+  "normal_shopping_078_C_2_6_30_BU_DYA_08-29_11-45-30_CA_RGB_DF1_M1_F1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_30_BU_DYA_08-29_11-45-30_CA_RGB_DF1_M1_F1.mp4",
+    "category": "normal",
+    "frame_count": 250,
+    "person_count": 3,
+    "video_index": 78,
+    "label_start_idx": 48929,
+    "label_end_idx": 49178
+  },
+  "normal_shopping_079_C_2_6_23_BU_DYA_07-30_19-08-34_CA_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_23_BU_DYA_07-30_19-08-34_CA_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 272,
+    "person_count": 8,
+    "video_index": 79,
+    "label_start_idx": 49529,
+    "label_end_idx": 49800
+  },
+  "normal_shopping_080_C_2_6_12_BU_SYB_10-16_09-42-01_CA_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_12_BU_SYB_10-16_09-42-01_CA_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 286,
+    "person_count": 2,
+    "video_index": 80,
+    "label_start_idx": 50129,
+    "label_end_idx": 50414
+  },
+  "normal_shopping_081_C_2_6_36_BU_SYB_10-15_13-40-59_CD_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_36_BU_SYB_10-15_13-40-59_CD_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 218,
+    "person_count": 2,
+    "video_index": 81,
+    "label_start_idx": 50730,
+    "label_end_idx": 50947
+  },
+  "normal_shopping_082_C_2_6_29_BU_SMB_10-15_20-14-07_CC_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_29_BU_SMB_10-15_20-14-07_CC_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 269,
+    "person_count": 2,
+    "video_index": 82,
+    "label_start_idx": 51330,
+    "label_end_idx": 51598
+  },
+  "normal_shopping_083_C_2_6_20_BU_SMB_10-15_20-44-51_CC_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_20_BU_SMB_10-15_20-44-51_CC_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 4,
+    "person_count": 4,
+    "video_index": 83,
+    "label_start_idx": 51930,
+    "label_end_idx": 51933
+  },
+  "normal_shopping_084_C_2_6_47_BU_DYA_07-30_20-00-17_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_47_BU_DYA_07-30_20-00-17_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 269,
+    "person_count": 3,
+    "video_index": 84,
+    "label_start_idx": 52530,
+    "label_end_idx": 52798
+  },
+  "normal_shopping_085_C_2_6_36_BU_SMA_09-28_14-37-52_CC_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_36_BU_SMA_09-28_14-37-52_CC_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 28,
+    "person_count": 4,
+    "video_index": 85,
+    "label_start_idx": 53130,
+    "label_end_idx": 53157
+  },
+  "normal_shopping_086_C_2_6_15_BU_DYB_10-12_16-14-36_CD_RGB_DF1_M2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_15_BU_DYB_10-12_16-14-36_CD_RGB_DF1_M2_M2.mp4",
+    "category": "normal",
+    "frame_count": 280,
+    "person_count": 3,
+    "video_index": 86,
+    "label_start_idx": 53730,
+    "label_end_idx": 54009
+  },
+  "normal_shopping_087_C_2_6_33_BU_SMB_10-15_20-18-40_CB_RGB_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_33_BU_SMB_10-15_20-18-40_CB_RGB_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 4,
+    "video_index": 87,
+    "label_start_idx": 54330,
+    "label_end_idx": 54929
+  },
+  "normal_shopping_088_C_2_6_36_BU_SMA_09-28_14-37-52_CA_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_36_BU_SMA_09-28_14-37-52_CA_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 180,
+    "person_count": 5,
+    "video_index": 88,
+    "label_start_idx": 54930,
+    "label_end_idx": 55109
+  },
+  "normal_shopping_089_C_2_6_49_BU_DYA_07-30_19-15-16_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_49_BU_DYA_07-30_19-15-16_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 241,
+    "person_count": 4,
+    "video_index": 89,
+    "label_start_idx": 55531,
+    "label_end_idx": 55771
+  },
+  "normal_shopping_090_C_2_6_41_BU_DYB_10-12_16-47-01_CB_RGB_DF1_M3_M3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_41_BU_DYB_10-12_16-47-01_CB_RGB_DF1_M3_M3.mp4",
+    "category": "normal",
+    "frame_count": 258,
+    "person_count": 3,
+    "video_index": 90,
+    "label_start_idx": 56131,
+    "label_end_idx": 56388
+  },
+  "normal_shopping_091_C_2_6_4_BU_SMA_09-17_17-15-03_CA_RGB_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_4_BU_SMA_09-17_17-15-03_CA_RGB_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 590,
+    "person_count": 5,
+    "video_index": 91,
+    "label_start_idx": 56731,
+    "label_end_idx": 57320
+  },
+  "normal_shopping_092_C_2_6_4_BU_DYB_10-08_15-48-05_CC_RGB_DF1_M1_M1": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Training\\raw_data\\TS_02.구매행동_06.비교_1\\C_2_6_4_BU_DYB_10-08_15-48-05_CC_RGB_DF1_M1_M1.mp4",
+    "category": "normal",
+    "frame_count": 303,
+    "person_count": 2,
+    "video_index": 92,
+    "label_start_idx": 57332,
+    "label_end_idx": 57634
+  },
+  "normal_shopping_093_C_2_3_54_BU_SYB_10-15_17-39-12_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_54_BU_SYB_10-15_17-39-12_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 557,
+    "person_count": 4,
+    "video_index": 93,
+    "label_start_idx": 57932,
+    "label_end_idx": 58488
+  },
+  "normal_shopping_094_C_2_5_97_BU_DYB_10-23_13-52-56_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_05.반품\\C_2_5_97_BU_DYB_10-23_13-52-56_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 245,
+    "person_count": 8,
+    "video_index": 94,
+    "label_start_idx": 58532,
+    "label_end_idx": 58776
+  },
+  "normal_shopping_095_C_2_4_51_BU_SYB_10-16_18-16-32_CB_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_04.구매\\C_2_4_51_BU_SYB_10-16_18-16-32_CB_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 45,
+    "person_count": 9,
+    "video_index": 95,
+    "label_start_idx": 59133,
+    "label_end_idx": 59177
+  },
+  "normal_shopping_096_C_2_6_65_BU_DYB_10-20_14-58-42_CA_RGB_DF1_F4_F4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_06.비교\\C_2_6_65_BU_DYB_10-20_14-58-42_CA_RGB_DF1_F4_F4.mp4",
+    "category": "normal",
+    "frame_count": 432,
+    "person_count": 4,
+    "video_index": 96,
+    "label_start_idx": 59733,
+    "label_end_idx": 60164
+  },
+  "normal_shopping_097_C_2_3_63_BU_SMB_10-15_11-13-12_CB_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_63_BU_SMB_10-15_11-13-12_CB_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 244,
+    "person_count": 2,
+    "video_index": 97,
+    "label_start_idx": 60333,
+    "label_end_idx": 60576
+  },
+  "normal_shopping_098_C_2_6_63_BU_SMB_10-15_11-26-48_CA_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_06.비교\\C_2_6_63_BU_SMB_10-15_11-26-48_CA_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 256,
+    "person_count": 2,
+    "video_index": 98,
+    "label_start_idx": 60933,
+    "label_end_idx": 61188
+  },
+  "normal_shopping_099_C_2_3_56_BU_SYB_10-15_17-41-10_CA_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_56_BU_SYB_10-15_17-41-10_CA_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 256,
+    "person_count": 3,
+    "video_index": 99,
+    "label_start_idx": 61533,
+    "label_end_idx": 61788
+  },
+  "normal_shopping_100_C_2_6_63_BU_DYB_10-20_14-56-02_CC_RGB_DF1_F4_F4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_06.비교\\C_2_6_63_BU_DYB_10-20_14-56-02_CC_RGB_DF1_F4_F4.mp4",
+    "category": "normal",
+    "frame_count": 589,
+    "person_count": 3,
+    "video_index": 100,
+    "label_start_idx": 62133,
+    "label_end_idx": 62721
+  },
+  "normal_shopping_101_C_2_3_54_BU_SYB_10-15_17-39-12_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_54_BU_SYB_10-15_17-39-12_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 210,
+    "person_count": 3,
+    "video_index": 101,
+    "label_start_idx": 62733,
+    "label_end_idx": 62942
+  },
+  "normal_shopping_102_C_2_3_61_BU_SYB_10-15_10-18-54_CC_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_61_BU_SYB_10-15_10-18-54_CC_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 218,
+    "person_count": 2,
+    "video_index": 102,
+    "label_start_idx": 63333,
+    "label_end_idx": 63550
+  },
+  "normal_shopping_103_C_2_5_100_BU_SYA_09-16_15-13-51_CA_RGB_DF1_F4_F4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_05.반품\\C_2_5_100_BU_SYA_09-16_15-13-51_CA_RGB_DF1_F4_F4.mp4",
+    "category": "normal",
+    "frame_count": 598,
+    "person_count": 8,
+    "video_index": 103,
+    "label_start_idx": 63933,
+    "label_end_idx": 64530
+  },
+  "normal_shopping_104_C_2_5_107_BU_DYB_10-20_15-51-37_CB_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_05.반품\\C_2_5_107_BU_DYB_10-20_15-51-37_CB_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 600,
+    "person_count": 3,
+    "video_index": 104,
+    "label_start_idx": 64533,
+    "label_end_idx": 65132
+  },
+  "normal_shopping_105_C_2_3_57_BU_DYB_10-20_14-16-05_CC_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_57_BU_DYB_10-20_14-16-05_CC_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 105,
+    "person_count": 16,
+    "video_index": 105,
+    "label_start_idx": 65133,
+    "label_end_idx": 65237
+  },
+  "normal_shopping_106_C_1_1_91_BU_DYA_07-18_16-36-43_a_DF1_F2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_01.매장이동_01.매장이동\\C_1_1_91_BU_DYA_07-18_16-36-43_a_DF1_F2_M2.mp4",
+    "category": "normal",
+    "frame_count": 11,
+    "person_count": 17,
+    "video_index": 106,
+    "label_start_idx": 65733,
+    "label_end_idx": 65743
+  },
+  "normal_shopping_107_C_2_3_57_BU_SYA_09-15_11-20-23_CB_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_57_BU_SYA_09-15_11-20-23_CB_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 129,
+    "person_count": 5,
+    "video_index": 107,
+    "label_start_idx": 66634,
+    "label_end_idx": 66762
+  },
+  "normal_shopping_108_C_2_2_59_BU_DYB_10-20_14-02-41_CB_RGB_DF1_M4_M4": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_02.선택\\C_2_2_59_BU_DYB_10-20_14-02-41_CB_RGB_DF1_M4_M4.mp4",
+    "category": "normal",
+    "frame_count": 74,
+    "person_count": 7,
+    "video_index": 108,
+    "label_start_idx": 67234,
+    "label_end_idx": 67307
+  },
+  "normal_shopping_109_C_2_3_56_BU_SYB_10-15_17-41-10_CC_RGB_DF1_F3_F3": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_02.구매행동_03.시험\\C_2_3_56_BU_SYB_10-15_17-41-10_CC_RGB_DF1_F3_F3.mp4",
+    "category": "normal",
+    "frame_count": 536,
+    "person_count": 4,
+    "video_index": 109,
+    "label_start_idx": 67834,
+    "label_end_idx": 68369
+  },
+  "normal_shopping_110_C_1_1_86_BU_DYA_07-18_16-00-04_e_DF1_F2_F2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_01.매장이동_01.매장이동\\C_1_1_86_BU_DYA_07-18_16-00-04_e_DF1_F2_F2.mp4",
+    "category": "normal",
+    "frame_count": 125,
+    "person_count": 20,
+    "video_index": 110,
+    "label_start_idx": 68435,
+    "label_end_idx": 68559
+  },
+  "normal_shopping_111_C_1_1_93_BU_DYA_07-18_17-06-38_c_DF1_F2_M2": {
+    "original_path": "D:\\AI-HUB_shoping\\shoping_data\\Validation\\raw_data\\VS_01.매장이동_01.매장이동\\C_1_1_93_BU_DYA_07-18_17-06-38_c_DF1_F2_M2.mp4",
+    "category": "normal",
+    "frame_count": 144,
+    "person_count": 10,
+    "video_index": 111,
+    "label_start_idx": 69336,
+    "label_end_idx": 69479
+  },
+  "abnormal_shoplifting_001_C_3_12_16_BU_SMB_09-01_14-40-24_CD_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_16_BU_SMB_09-01_14-40-24_CD_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 155,
+    "person_count": 1,
+    "video_index": 1,
+    "label_start_idx": 0,
+    "label_end_idx": 154
+  },
+  "abnormal_shoplifting_002_C_3_12_41_BU_SMC_10-14_11-45-31_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_41_BU_SMC_10-14_11-45-31_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 133,
+    "person_count": 1,
+    "video_index": 2,
+    "label_start_idx": 181,
+    "label_end_idx": 313
+  },
+  "abnormal_shoplifting_003_C_3_12_25_BU_SMA_09-27_10-59-52_CD_RGB_DF2_F3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_25_BU_SMA_09-27_10-59-52_CD_RGB_DF2_F3.mp4",
+    "category": "abnormal",
+    "frame_count": 162,
+    "person_count": 1,
+    "video_index": 3,
+    "label_start_idx": 361,
+    "label_end_idx": 522
+  },
+  "abnormal_shoplifting_004_C_3_12_36_BU_SMC_10-16_11-16-23_CA_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_36_BU_SMC_10-16_11-16-23_CA_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 36,
+    "person_count": 3,
+    "video_index": 4,
+    "label_start_idx": 541,
+    "label_end_idx": 576
+  },
+  "abnormal_shoplifting_005_C_3_12_21_BU_SYA_10-06_14-44-28_CC_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_21_BU_SYA_10-06_14-44-28_CC_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 174,
+    "person_count": 5,
+    "video_index": 5,
+    "label_start_idx": 721,
+    "label_end_idx": 894
+  },
+  "abnormal_shoplifting_006_C_3_12_3_BU_SMA_08-28_13-56-13_CD_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_3_BU_SMA_08-28_13-56-13_CD_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 180,
+    "person_count": 2,
+    "video_index": 6,
+    "label_start_idx": 901,
+    "label_end_idx": 1080
+  },
+  "abnormal_shoplifting_007_C_3_12_14_BU_SMC_07-27_13-13-46_CC_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_14_BU_SMC_07-27_13-13-46_CC_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 181,
+    "person_count": 2,
+    "video_index": 7,
+    "label_start_idx": 1081,
+    "label_end_idx": 1261
+  },
+  "abnormal_shoplifting_008_C_3_12_8_BU_SYB_09-28_14-20-33_CA_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_8_BU_SYB_09-28_14-20-33_CA_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 180,
+    "person_count": 2,
+    "video_index": 8,
+    "label_start_idx": 1262,
+    "label_end_idx": 1441
+  },
+  "abnormal_shoplifting_009_C_3_12_14_BU_SMB_09-01_14-49-58_CD_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_14_BU_SMB_09-01_14-49-58_CD_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 157,
+    "person_count": 1,
+    "video_index": 9,
+    "label_start_idx": 1442,
+    "label_end_idx": 1598
+  },
+  "abnormal_shoplifting_010_C_3_12_37_BU_DYA_07-29_12-07-45_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_37_BU_DYA_07-29_12-07-45_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 173,
+    "person_count": 1,
+    "video_index": 10,
+    "label_start_idx": 1622,
+    "label_end_idx": 1794
+  },
+  "abnormal_shoplifting_011_C_3_12_4_BU_DYB_08-06_14-42-11_CA_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_4_BU_DYB_08-06_14-42-11_CA_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 165,
+    "person_count": 1,
+    "video_index": 11,
+    "label_start_idx": 1802,
+    "label_end_idx": 1966
+  },
+  "abnormal_shoplifting_012_C_3_12_38_BU_SMC_10-16_11-18-38_CB_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_38_BU_SMC_10-16_11-18-38_CB_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 21,
+    "person_count": 5,
+    "video_index": 12,
+    "label_start_idx": 1982,
+    "label_end_idx": 2002
+  },
+  "abnormal_shoplifting_013_C_3_12_44_BU_SMC_10-14_12-19-55_CE_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_44_BU_SMC_10-14_12-19-55_CE_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 43,
+    "person_count": 2,
+    "video_index": 13,
+    "label_start_idx": 2163,
+    "label_end_idx": 2205
+  },
+  "abnormal_shoplifting_014_C_3_12_22_BU_SYA_10-06_14-28-50_CB_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_22_BU_SYA_10-06_14-28-50_CB_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 169,
+    "person_count": 2,
+    "video_index": 14,
+    "label_start_idx": 2343,
+    "label_end_idx": 2511
+  },
+  "abnormal_shoplifting_015_C_3_12_12_BU_DYA_08-10_15-01-33_CE_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_12_BU_DYA_08-10_15-01-33_CE_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 157,
+    "person_count": 1,
+    "video_index": 15,
+    "label_start_idx": 2523,
+    "label_end_idx": 2679
+  },
+  "abnormal_shoplifting_016_C_3_12_28_BU_SMB_09-02_14-37-10_CD_RGB_DF2_F3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_28_BU_SMB_09-02_14-37-10_CD_RGB_DF2_F3.mp4",
+    "category": "abnormal",
+    "frame_count": 149,
+    "person_count": 1,
+    "video_index": 16,
+    "label_start_idx": 2704,
+    "label_end_idx": 2852
+  },
+  "abnormal_shoplifting_017_C_3_12_48_BU_SMC_10-14_13-46-19_CD_RGB_DF2_F3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_48_BU_SMC_10-14_13-46-19_CD_RGB_DF2_F3.mp4",
+    "category": "abnormal",
+    "frame_count": 82,
+    "person_count": 2,
+    "video_index": 17,
+    "label_start_idx": 2885,
+    "label_end_idx": 2966
+  },
+  "abnormal_shoplifting_018_C_3_12_47_BU_DYB_10-17_13-44-21_CE_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_47_BU_DYB_10-17_13-44-21_CE_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 162,
+    "person_count": 1,
+    "video_index": 18,
+    "label_start_idx": 3065,
+    "label_end_idx": 3226
+  },
+  "abnormal_shoplifting_019_C_3_12_2_BU_SMB_08-28_16-27-05_CA_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_2_BU_SMB_08-28_16-27-05_CA_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 180,
+    "person_count": 2,
+    "video_index": 19,
+    "label_start_idx": 3245,
+    "label_end_idx": 3424
+  },
+  "abnormal_shoplifting_020_C_3_12_8_BU_SMC_08-01_16-10-50_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_8_BU_SMC_08-01_16-10-50_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 164,
+    "person_count": 1,
+    "video_index": 20,
+    "label_start_idx": 3425,
+    "label_end_idx": 3588
+  },
+  "abnormal_shoplifting_021_C_3_12_40_BU_SMC_10-14_11-43-44_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_40_BU_SMC_10-14_11-43-44_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 123,
+    "person_count": 2,
+    "video_index": 21,
+    "label_start_idx": 3605,
+    "label_end_idx": 3727
+  },
+  "abnormal_shoplifting_022_C_3_12_23_BU_SYB_10-04_14-48-01_CD_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_23_BU_SYB_10-04_14-48-01_CD_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 181,
+    "person_count": 2,
+    "video_index": 22,
+    "label_start_idx": 3785,
+    "label_end_idx": 3965
+  },
+  "abnormal_shoplifting_023_C_3_12_40_BU_SMC_10-14_11-43-44_CC_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_40_BU_SMC_10-14_11-43-44_CC_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 134,
+    "person_count": 2,
+    "video_index": 23,
+    "label_start_idx": 3966,
+    "label_end_idx": 4099
+  },
+  "abnormal_shoplifting_024_C_3_12_44_BU_DYB_10-16_14-56-44_CE_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_44_BU_DYB_10-16_14-56-44_CE_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 137,
+    "person_count": 2,
+    "video_index": 24,
+    "label_start_idx": 4147,
+    "label_end_idx": 4283
+  },
+  "abnormal_shoplifting_025_C_3_12_25_BU_SMA_09-27_10-59-52_CB_RGB_DF2_F3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_25_BU_SMA_09-27_10-59-52_CB_RGB_DF2_F3.mp4",
+    "category": "abnormal",
+    "frame_count": 161,
+    "person_count": 1,
+    "video_index": 25,
+    "label_start_idx": 4327,
+    "label_end_idx": 4487
+  },
+  "abnormal_shoplifting_026_C_3_12_25_BU_DYB_08-06_16-42-03_CD_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_25_BU_DYB_08-06_16-42-03_CD_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 169,
+    "person_count": 1,
+    "video_index": 26,
+    "label_start_idx": 4508,
+    "label_end_idx": 4676
+  },
+  "abnormal_shoplifting_027_C_3_12_40_BU_SMC_10-14_11-43-44_CB_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_40_BU_SMC_10-14_11-43-44_CB_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 139,
+    "person_count": 2,
+    "video_index": 27,
+    "label_start_idx": 4688,
+    "label_end_idx": 4826
+  },
+  "abnormal_shoplifting_028_C_3_12_34_BU_DYA_08-10_17-14-10_CB_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_34_BU_DYA_08-10_17-14-10_CB_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 168,
+    "person_count": 3,
+    "video_index": 28,
+    "label_start_idx": 4868,
+    "label_end_idx": 5035
+  },
+  "abnormal_shoplifting_029_C_3_12_29_BU_SMC_08-07_13-33-42_CF_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_29_BU_SMC_08-07_13-33-42_CF_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 171,
+    "person_count": 1,
+    "video_index": 29,
+    "label_start_idx": 5049,
+    "label_end_idx": 5219
+  },
+  "abnormal_shoplifting_030_C_3_12_35_BU_SMC_10-16_11-11-42_CB_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_35_BU_SMC_10-16_11-11-42_CB_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 30,
+    "person_count": 5,
+    "video_index": 30,
+    "label_start_idx": 5229,
+    "label_end_idx": 5258
+  },
+  "abnormal_shoplifting_031_C_3_12_22_BU_SMB_09-02_15-48-48_CD_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_22_BU_SMB_09-02_15-48-48_CD_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 160,
+    "person_count": 1,
+    "video_index": 31,
+    "label_start_idx": 5409,
+    "label_end_idx": 5568
+  },
+  "abnormal_shoplifting_032_C_3_12_5_BU_SMA_08-28_14-03-02_CA_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_5_BU_SMA_08-28_14-03-02_CA_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 163,
+    "person_count": 1,
+    "video_index": 32,
+    "label_start_idx": 5589,
+    "label_end_idx": 5751
+  },
+  "abnormal_shoplifting_033_C_3_12_36_BU_DYA_08-10_17-19-23_CA_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_36_BU_DYA_08-10_17-19-23_CA_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 164,
+    "person_count": 1,
+    "video_index": 33,
+    "label_start_idx": 5769,
+    "label_end_idx": 5932
+  },
+  "abnormal_shoplifting_034_C_3_12_5_BU_SMB_08-28_16-32-53_CC_RGB_DF2_F1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_5_BU_SMB_08-28_16-32-53_CC_RGB_DF2_F1.mp4",
+    "category": "abnormal",
+    "frame_count": 39,
+    "person_count": 3,
+    "video_index": 34,
+    "label_start_idx": 5949,
+    "label_end_idx": 5987
+  },
+  "abnormal_shoplifting_035_C_3_12_24_BU_SMB_09-02_15-52-54_CC_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_24_BU_SMB_09-02_15-52-54_CC_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 151,
+    "person_count": 1,
+    "video_index": 35,
+    "label_start_idx": 6129,
+    "label_end_idx": 6279
+  },
+  "abnormal_shoplifting_036_C_3_12_25_BU_SMC_08-07_13-26-00_CF_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_25_BU_SMC_08-07_13-26-00_CF_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 13,
+    "person_count": 2,
+    "video_index": 36,
+    "label_start_idx": 6310,
+    "label_end_idx": 6322
+  },
+  "abnormal_shoplifting_037_C_3_12_31_BU_SMC_10-16_11-00-59_CE_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_31_BU_SMC_10-16_11-00-59_CE_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 28,
+    "person_count": 3,
+    "video_index": 37,
+    "label_start_idx": 6490,
+    "label_end_idx": 6517
+  },
+  "abnormal_shoplifting_038_C_3_12_10_BU_SMB_09-01_13-52-38_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_10_BU_SMB_09-01_13-52-38_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 163,
+    "person_count": 1,
+    "video_index": 38,
+    "label_start_idx": 6670,
+    "label_end_idx": 6832
+  },
+  "abnormal_shoplifting_039_C_3_12_32_BU_SMC_10-16_11-02-57_CB_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_32_BU_SMC_10-16_11-02-57_CB_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 180,
+    "person_count": 3,
+    "video_index": 39,
+    "label_start_idx": 6850,
+    "label_end_idx": 7029
+  },
+  "abnormal_shoplifting_040_C_3_12_24_BU_SMA_09-27_11-47-00_CC_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_24_BU_SMA_09-27_11-47-00_CC_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 147,
+    "person_count": 1,
+    "video_index": 40,
+    "label_start_idx": 7030,
+    "label_end_idx": 7176
+  },
+  "abnormal_shoplifting_041_C_3_12_8_BU_SMB_09-01_13-48-31_CA_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_8_BU_SMB_09-01_13-48-31_CA_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 160,
+    "person_count": 1,
+    "video_index": 41,
+    "label_start_idx": 7210,
+    "label_end_idx": 7369
+  },
+  "abnormal_shoplifting_042_C_3_12_9_BU_SMB_09-01_13-50-35_CD_RGB_DF2_M2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_9_BU_SMB_09-01_13-50-35_CD_RGB_DF2_M2.mp4",
+    "category": "abnormal",
+    "frame_count": 172,
+    "person_count": 1,
+    "video_index": 42,
+    "label_start_idx": 7390,
+    "label_end_idx": 7561
+  },
+  "abnormal_shoplifting_043_C_3_12_30_BU_SMB_09-02_14-40-47_CC_RGB_DF2_F3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_30_BU_SMB_09-02_14-40-47_CC_RGB_DF2_F3.mp4",
+    "category": "abnormal",
+    "frame_count": 145,
+    "person_count": 1,
+    "video_index": 43,
+    "label_start_idx": 7570,
+    "label_end_idx": 7714
+  },
+  "abnormal_shoplifting_044_C_3_12_20_BU_SYB_10-04_14-58-13_CC_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_20_BU_SYB_10-04_14-58-13_CC_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 140,
+    "person_count": 4,
+    "video_index": 44,
+    "label_start_idx": 7750,
+    "label_end_idx": 7889
+  },
+  "abnormal_shoplifting_045_C_3_12_19_BU_SYB_10-04_14-56-37_CB_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_19_BU_SYB_10-04_14-56-37_CB_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 168,
+    "person_count": 5,
+    "video_index": 45,
+    "label_start_idx": 7931,
+    "label_end_idx": 8098
+  },
+  "abnormal_shoplifting_046_C_3_12_12_BU_DYA_07-27_13-06-19_CA_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_12_BU_DYA_07-27_13-06-19_CA_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 167,
+    "person_count": 1,
+    "video_index": 46,
+    "label_start_idx": 8111,
+    "label_end_idx": 8277
+  },
+  "abnormal_shoplifting_047_C_3_12_48_BU_DYB_10-17_13-46-19_CC_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_48_BU_DYB_10-17_13-46-19_CC_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 147,
+    "person_count": 3,
+    "video_index": 47,
+    "label_start_idx": 8291,
+    "label_end_idx": 8437
+  },
+  "abnormal_shoplifting_048_C_3_12_17_BU_SMB_09-01_14-43-10_CD_RGB_DF2_F2": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_17_BU_SMB_09-01_14-43-10_CD_RGB_DF2_F2.mp4",
+    "category": "abnormal",
+    "frame_count": 145,
+    "person_count": 1,
+    "video_index": 48,
+    "label_start_idx": 8471,
+    "label_end_idx": 8615
+  },
+  "abnormal_shoplifting_049_C_3_12_3_BU_SMA_08-30_14-41-20_CA_RGB_DF2_M1": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Training\\raw_data\\Shoplift\\C_3_12_3_BU_SMA_08-30_14-41-20_CA_RGB_DF2_M1.mp4",
+    "category": "abnormal",
+    "frame_count": 137,
+    "person_count": 1,
+    "video_index": 49,
+    "label_start_idx": 8651,
+    "label_end_idx": 8787
+  },
+  "abnormal_shoplifting_050_C_3_12_45_BU_SMC_10-14_16-07-18_CB_RGB_DF2_M3": {
+    "original_path": "D:\\AI-HUB_shoplifting\\shoplift_data\\Validation\\raw_data\\Shoplift\\C_3_12_45_BU_SMC_10-14_16-07-18_CB_RGB_DF2_M3.mp4",
+    "category": "abnormal",
+    "frame_count": 146,
+    "person_count": 1,
+    "video_index": 50,
+    "label_start_idx": 8831,
+    "label_end_idx": 8976
+  }
+}

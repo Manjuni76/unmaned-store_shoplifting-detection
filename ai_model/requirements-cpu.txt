@@ -1,0 +1,7 @@
+# PyTorch CPU 버전
+# 다음 명령어로 설치:
+# pip install -r requirements-cpu.txt --index-url https://download.pytorch.org/whl/cpu
+
+torch==2.7.1+cpu
+torchvision==0.22.1+cpu
+torchaudio==2.7.1+cpu
