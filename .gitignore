@@ -1,0 +1,61 @@
+# Python - 가상환경 폴더 (Virtual Environments)
+venv/
+env/
+.venv/
+.env/
+
+# Python - 캐시 및 컴파일 파일 (Cache & Compiled Files)
+__pycache__/
+*.pyc
+
+# IDE / Editor 설정 파일 (IDE / Editor Settings)
+.vscode/
+.idea/
+
+# Jupyter Notebook 체크포인트 (Jupyter Notebook Checkpoints)
+.ipynb_checkpoints/
+
+# 운영체제 생성 파일 (OS Generated Files)
+.DS_Store
+Thumbs.db
+
+# --- 프론트엔드 (JavaScript) ---
+# Node.js 의존성 폴더 (매우 중요)
+node_modules/
+
+# 빌드 결과물
+build/
+dist/
+
+# 로그 파일
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 환경 변수 파일 (API 키 등 민감 정보)
+.env
+.env.local
+
+# --- 프로젝트별 핵심 설정 ---
+
+# 1. 데이터 및 미디어 파일 (Data & Media Files)
+data/
+videos/
+*.mp4
+*.mov
+*.avi
+*.csv
+*.json
+
+# 2. AI 모델 파일 (AI Model Files)
+models/
+*.pth
+*.pt
+
+# 3. 데이터베이스 파일 (Database Files)
+*.db
+*.sqlite3
+
+# 4. 로그 및 임시 파일 (Log & Temporary Files)
+*.log
+*.tmp
