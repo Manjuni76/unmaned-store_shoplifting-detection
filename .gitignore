@@ -40,6 +40,7 @@ yarn-error.log*
 
 # 1. 데이터 및 미디어 파일 (Data & Media Files)
 data/
+data_splited/
 videos/
 *.mp4
 *.mov
