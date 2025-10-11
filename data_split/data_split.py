@@ -1,499 +1,462 @@
 import os
-import cv2
 import xml.etree.ElementTree as ET
-from pathlib import Path
-import shutil
-import random
 import json
+import random
+import numpy as np
+from pathlib import Path
+import cv2
 from collections import defaultdict
-import math
 
-def parse_xml_for_theft_frames(xml_path):
-    """XML 파일에서 도난(theft) 시작과 끝 프레임을 추출합니다."""
-    try:
-        tree = ET.parse(xml_path)
-        root = tree.getroot()
-        
-        theft_start = None
-        theft_end = None
-        
-        for track in root.findall('.//track'):
-            label = track.get('label')
-            if label == 'theft_start':
-                box = track.find('box')
-                if box is not None:
-                    frame_attr = box.get('frame')
-                    if frame_attr is not None:
-                        theft_start = int(frame_attr)
-            elif label == 'theft_end':
-                box = track.find('box')
-                if box is not None:
-                    frame_attr = box.get('frame')
-                    if frame_attr is not None:
-                        theft_end = int(frame_attr)
-        
-        return theft_start, theft_end
-    except Exception as e:
-        print(f"Error parsing XML {xml_path}: {e}")
-        return None, None
 
-def count_video_frames(video_path):
-    """비디오 파일의 프레임 수를 계산합니다."""
-    try:
-        cap = cv2.VideoCapture(video_path)
-        frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-        cap.release()
-        return frame_count
-    except Exception as e:
-        print(f"Error reading video {video_path}: {e}")
-        return 0
-
-def find_corresponding_video(xml_path, video_dir):
-    """XML 파일명에 대응하는 비디오 파일을 찾습니다."""
-    xml_name = Path(xml_path).stem
-    video_extensions = ['.mp4', '.avi', '.mov', '.mkv', '.wmv']
-    
-    for ext in video_extensions:
-        video_path = os.path.join(video_dir, xml_name + ext)
-        if os.path.exists(video_path):
-            return video_path
-    
-    # 재귀적으로 찾기
-    for root, dirs, files in os.walk(video_dir):
-        for file in files:
-            if any(file.lower().endswith(ext) for ext in video_extensions):
-                if xml_name in file or Path(file).stem in xml_name:
-                    return os.path.join(root, file)
-    
-    return None
-
-def extract_category_from_filename(filename):
-    """파일명에서 카테고리를 추출합니다."""
-    parts = filename.split('_')
-    if len(parts) >= 6:
-        category = parts[5]
-        return category
-    return "UNKNOWN"
-
-def collect_normal_videos():
-    """정상 비디오 데이터를 수집합니다."""
-    normal_video_dir = "D:\\AI-HUB_shoping"
-    normal_videos = []
-    
-    print("정상 비디오 수집 중...")
-    video_extensions = ['.mp4', '.avi', '.mov', '.mkv', '.wmv']
-    
-    for root, dirs, files in os.walk(normal_video_dir):
-        for file in files:
-            if any(file.lower().endswith(ext) for ext in video_extensions):
-                video_path = os.path.join(root, file)
-                frame_count = count_video_frames(video_path)
-                if frame_count > 0:
-                    category = extract_category_from_filename(file)
-                    normal_videos.append({
-                        'path': video_path,
-                        'frames': frame_count,
-                        'category': category,
-                        'type': 'normal'
-                    })
-    
-    return normal_videos
-
-def collect_abnormal_videos():
-    """이상 비디오 데이터를 수집합니다."""
-    abnormal_video_dir = "D:\\AI-HUB_shoplifting"
-    abnormal_videos = []
-    
-    print("이상 비디오 수집 중...")
-    
-    xml_files = []
-    for root, dirs, files in os.walk(abnormal_video_dir):
-        for file in files:
-            if file.endswith('.xml'):
-                xml_files.append(os.path.join(root, file))
-    
-    for xml_path in xml_files:
-        theft_start, theft_end = parse_xml_for_theft_frames(xml_path)
+class DataSplitter:
+    def __init__(self):
+        # 데이터 경로 설정
+        self.normal_data_path = "D:/AI-HUB_shoping/shoping_data/Training/raw_data"
+        self.abnormal_data_path = "D:/AI-HUB_shoplifting/shoplift_data/Training/raw_data/Shoplift"
+        self.abnormal_label_path = "D:/AI-HUB_shoplifting/shoplift_data/Training/label_data/Shoplift"
         
-        if theft_start is None or theft_end is None:
-            continue
+        # 출력 경로 설정 (JSON 파일들)
+        self.output_base_path = "./output"
+        self.train_json = os.path.join(self.output_base_path, "train_data.json")
+        self.mlp_train_json = os.path.join(self.output_base_path, "mlp_train_data.json")
+        self.test_json = os.path.join(self.output_base_path, "test_data.json")
+        self.gt_path = os.path.join(self.output_base_path, "gt")
         
-        video_path = find_corresponding_video(xml_path, abnormal_video_dir)
+        # GT 하위 폴더
+        self.mlp_train_gt_path = os.path.join(self.gt_path, "mlp_train_gt")
+        self.test_gt_path = os.path.join(self.gt_path, "test_gt")
         
-        if video_path is None:
-            continue
+    def create_output_directories(self):
+        """출력 디렉토리 생성"""
+        directories = [
+            self.output_base_path,
+            self.gt_path, self.mlp_train_gt_path, self.test_gt_path
+        ]
         
-        total_video_frames = count_video_frames(video_path)
-        
-        if total_video_frames == 0:
-            continue
-        
-        abnormal_frames = theft_end - theft_start + 1
-        normal_frames_in_video = total_video_frames - abnormal_frames
-        
-        category = extract_category_from_filename(Path(video_path).name)
-        
-        abnormal_videos.append({
-            'path': video_path,
-            'xml_path': xml_path,
-            'total_frames': total_video_frames,
-            'theft_start': theft_start,
-            'theft_end': theft_end,
-            'normal_frames': normal_frames_in_video,
-            'abnormal_frames': abnormal_frames,
-            'category': category,
-            'type': 'abnormal'
-        })
-    
-    return abnormal_videos
-
-def calculate_balanced_split_sizes():
-    """균형잡힌 분할 크기를 계산합니다."""
-    # 도난 데이터 제약으로 인한 MLP, Test 크기
-    total_abnormal_frames = 48189
-    
-    # MLP:Test = 6:4 비율로 도난 데이터 분할
-    mlp_abnormal = int(total_abnormal_frames * 0.6)  # 약 28,913
-    test_abnormal = total_abnormal_frames - mlp_abnormal  # 약 19,276
-    
-    # 7:3 비율에 맞춰 정상 데이터 계산
-    mlp_normal = int(mlp_abnormal * 7 / 3)  # 약 67,463
-    test_normal = int(test_abnormal * 7 / 3)  # 약 44,977
-    
-    mlp_total = mlp_normal + mlp_abnormal
-    test_total = test_normal + test_abnormal
-    
-    # 특징추출용은 MLP + Test 합계와 비슷하게
-    feature_total = mlp_total + test_total  # 약 160,000 프레임
-    
-    print(f"균형잡힌 분할 계획:")
-    print(f"1) 특징추출용: {feature_total:,} 프레임 (정상 데이터만, 카테고리 균등)")
-    print(f"2) MLP 학습용: {mlp_total:,} 프레임 (정상:{mlp_normal:,}, 도난:{mlp_abnormal:,})")
-    print(f"3) 테스트용: {test_total:,} 프레임 (정상:{test_normal:,}, 도난:{test_abnormal:,})")
-    
-    return {
-        'feature_total': feature_total,
-        'mlp_normal': mlp_normal,
-        'mlp_abnormal': mlp_abnormal,
-        'test_normal': test_normal,
-        'test_abnormal': test_abnormal
-    }
-
-def split_data_balanced(normal_videos, abnormal_videos, split_sizes):
-    """균형잡힌 데이터 분할을 수행합니다."""
-    print("\n균형잡힌 데이터 분할 시작...")
-    
-    # 카테고리별로 그룹화
-    normal_by_category = defaultdict(list)
-    abnormal_by_category = defaultdict(list)
-    
-    for video in normal_videos:
-        normal_by_category[video['category']].append(video)
-    
-    for video in abnormal_videos:
-        abnormal_by_category[video['category']].append(video)
-    
-    print(f"정상 데이터 카테고리: {list(normal_by_category.keys())}")
-    print(f"도난 데이터 카테고리: {list(abnormal_by_category.keys())}")
-    
-    # 모든 데이터를 한 번에 섞어서 중복 방지
-    all_normal_videos = []
-    for category, videos in normal_by_category.items():
-        all_normal_videos.extend(videos)
-    
-    random.shuffle(all_normal_videos)
-    
-    # 2), 3)에서 사용할 도난 데이터 먼저 분할
-    all_abnormal_segments = []
-    for category, videos in abnormal_by_category.items():
-        for video in videos:
-            # 정상 구간들
-            if video['theft_start'] > 0:
-                all_abnormal_segments.append({
-                    'video': video,
-                    'start_frame': 0,
-                    'end_frame': video['theft_start'] - 1,
-                    'frames': video['theft_start'],
-                    'label': 'normal'
-                })
+        for directory in directories:
+            os.makedirs(directory, exist_ok=True)
             
-            if video['theft_end'] < video['total_frames'] - 1:
-                all_abnormal_segments.append({
-                    'video': video,
-                    'start_frame': video['theft_end'] + 1,
-                    'end_frame': video['total_frames'] - 1,
-                    'frames': video['total_frames'] - video['theft_end'] - 1,
-                    'label': 'normal'
-                })
+    def parse_xml_for_theft_frames(self, xml_path):
+        """XML 파일에서 theft_start, theft_end 프레임 정보 추출"""
+        try:
+            tree = ET.parse(xml_path)
+            root = tree.getroot()
             
-            # 도난 구간
-            all_abnormal_segments.append({
-                'video': video,
-                'start_frame': video['theft_start'],
-                'end_frame': video['theft_end'],
-                'frames': video['abnormal_frames'],
-                'label': 'abnormal'
-            })
-    
-    random.shuffle(all_abnormal_segments)
-    
-    # MLP용 데이터 선택
-    mlp_data = []
-    mlp_abnormal_needed = split_sizes['mlp_abnormal']
-    mlp_normal_needed = split_sizes['mlp_normal']
-    
-    current_mlp_abnormal = 0
-    current_mlp_normal = 0
-    used_segments = []
-    
-    for segment in all_abnormal_segments:
-        if segment['label'] == 'abnormal' and current_mlp_abnormal < mlp_abnormal_needed:
-            needed = min(mlp_abnormal_needed - current_mlp_abnormal, segment['frames'])
-            mlp_data.append({
-                'video': segment['video'],
-                'start_frame': segment['start_frame'],
-                'end_frame': segment['start_frame'] + needed - 1,
-                'frames_to_use': needed,
-                'label': 'abnormal'
-            })
-            current_mlp_abnormal += needed
-            used_segments.append(segment)
+            theft_start_frame = None
+            theft_end_frame = None
+            total_frames = 0
             
-        elif segment['label'] == 'normal' and current_mlp_normal < mlp_normal_needed:
-            needed = min(mlp_normal_needed - current_mlp_normal, segment['frames'])
-            mlp_data.append({
-                'video': segment['video'],
-                'start_frame': segment['start_frame'],
-                'end_frame': segment['start_frame'] + needed - 1,
-                'frames_to_use': needed,
-                'label': 'normal'
-            })
-            current_mlp_normal += needed
-            used_segments.append(segment)
+            # 전체 프레임 수 확인
+            task = root.find('meta/task')
+            if task is not None:
+                stop_frame = task.find('stop_frame')
+                if stop_frame is not None and stop_frame.text is not None:
+                    total_frames = int(stop_frame.text) + 1  # 0부터 시작하므로 +1
+            
+            # theft_start와 theft_end 트랙 찾기
+            tracks = root.findall('track')
+            for track in tracks:
+                label = track.get('label')
+                if label == 'theft_start':
+                    # 첫 번째 box의 frame 찾기
+                    box = track.find('box[@outside="0"]')  # outside="0"인 첫 번째 박스
+                    if box is not None:
+                        frame_attr = box.get('frame')
+                        if frame_attr is not None:
+                            theft_start_frame = int(frame_attr)
+                        
+                elif label == 'theft_end':
+                    # 첫 번째 box의 frame 찾기
+                    box = track.find('box[@outside="0"]')  # outside="0"인 첫 번째 박스
+                    if box is not None:
+                        frame_attr = box.get('frame')
+                        if frame_attr is not None:
+                            theft_end_frame = int(frame_attr)
+            
+            return theft_start_frame, theft_end_frame, total_frames
+            
+        except Exception as e:
+            print(f"XML 파싱 오류 {xml_path}: {e}")
+            return None, None, 0
+    
+    def get_video_frame_count(self, video_path):
+        """비디오 파일의 프레임 수 확인"""
+        try:
+            cap = cv2.VideoCapture(video_path)
+            frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+            cap.release()
+            return frame_count
+        except:
+            return 0
+    
+    def create_ground_truth_labels(self, video_name, theft_start, theft_end, total_frames, is_normal=False):
+        """Ground truth 라벨 생성 (0: 정상, 1: 이상)"""
+        if is_normal:
+            # 정상 데이터는 모든 프레임이 0
+            return np.zeros(total_frames, dtype=np.int32)
+        else:
+            # 이상 데이터는 theft_start부터 theft_end까지 1, 나머지는 0
+            labels = np.zeros(total_frames, dtype=np.int32)
+            if theft_start is not None and theft_end is not None:
+                labels[theft_start:theft_end+1] = 1
+            return labels
+    
+    def get_all_files(self):
+        """모든 정상/이상 데이터 파일 목록 수집"""
+        normal_files = []
+        abnormal_files = []
+        abnormal_annotations = {}
         
-        if current_mlp_abnormal >= mlp_abnormal_needed and current_mlp_normal >= mlp_normal_needed:
-            break
-    
-    # 테스트용 데이터 선택 (남은 것들로)
-    test_data = []
-    test_abnormal_needed = split_sizes['test_abnormal']
-    test_normal_needed = split_sizes['test_normal']
-    
-    current_test_abnormal = 0
-    current_test_normal = 0
-    
-    for segment in all_abnormal_segments:
-        if segment in used_segments:
-            continue
+        # 정상 데이터 수집 - 6개 카테고리에서 균등하게
+        if os.path.exists(self.normal_data_path):
+            categories = []
+            category_files = {}
             
-        if segment['label'] == 'abnormal' and current_test_abnormal < test_abnormal_needed:
-            needed = min(test_abnormal_needed - current_test_abnormal, segment['frames'])
-            test_data.append({
-                'video': segment['video'],
-                'start_frame': segment['start_frame'],
-                'end_frame': segment['start_frame'] + needed - 1,
-                'frames_to_use': needed,
-                'label': 'abnormal'
-            })
-            current_test_abnormal += needed
-            used_segments.append(segment)
+            # 각 카테고리별 파일 수집
+            for category_dir in os.listdir(self.normal_data_path):
+                category_path = os.path.join(self.normal_data_path, category_dir)
+                if os.path.isdir(category_path):
+                    category_files_list = []
+                    # 하위 폴더까지 재귀적으로 검색
+                    for root, dirs, files in os.walk(category_path):
+                        for file in files:
+                            if file.endswith('.mp4'):
+                                # 상대 경로로 저장 (카테고리 포함)
+                                rel_path = os.path.relpath(os.path.join(root, file), self.normal_data_path)
+                                category_files_list.append(rel_path)
+                    
+                    if category_files_list:
+                        categories.append(category_dir)
+                        category_files[category_dir] = category_files_list
+                        print(f"카테고리 {category_dir}: {len(category_files_list)}개 파일")
             
-        elif segment['label'] == 'normal' and current_test_normal < test_normal_needed:
-            needed = min(test_normal_needed - current_test_normal, segment['frames'])
-            test_data.append({
-                'video': segment['video'],
-                'start_frame': segment['start_frame'],
-                'end_frame': segment['start_frame'] + needed - 1,
-                'frames_to_use': needed,
-                'label': 'normal'
-            })
-            current_test_normal += needed
-            used_segments.append(segment)
+            # 각 카테고리에서 파일들을 셔플
+            for category in categories:
+                random.shuffle(category_files[category])
+            
+            self.category_files = category_files
+            self.categories = categories
+            
+            # 전체 정상 파일 리스트 생성 (나중에 균등 분할용)
+            for category in categories:
+                normal_files.extend(category_files[category])
         
-        if current_test_abnormal >= test_abnormal_needed and current_test_normal >= test_normal_needed:
-            break
-    
-    # 사용된 정상 비디오들 제거 (MLP, Test에서 사용된 정상 구간)
-    used_normal_videos = set()
-    for segment in used_segments:
-        if segment['label'] == 'normal':
-            used_normal_videos.add(segment['video']['path'])
-    
-    # MLP, Test 부족분을 일반 정상 비디오로 채우기
-    remaining_normal = [v for v in all_normal_videos if v['path'] not in used_normal_videos]
-    random.shuffle(remaining_normal)
-    
-    # MLP 정상 데이터 부족분 채우기
-    if current_mlp_normal < mlp_normal_needed:
-        needed = mlp_normal_needed - current_mlp_normal
-        for video in remaining_normal:
-            if needed <= 0:
-                break
-            frames_to_take = min(needed, video['frames'])
-            mlp_data.append({
-                'video': video,
-                'start_frame': 0,
-                'end_frame': frames_to_take - 1,
-                'frames_to_use': frames_to_take,
-                'label': 'normal'
-            })
-            needed -= frames_to_take
-            used_normal_videos.add(video['path'])
-    
-    # 테스트 정상 데이터 부족분 채우기
-    remaining_normal = [v for v in remaining_normal if v['path'] not in used_normal_videos]
-    if current_test_normal < test_normal_needed:
-        needed = test_normal_needed - current_test_normal
-        for video in remaining_normal:
-            if needed <= 0:
-                break
-            frames_to_take = min(needed, video['frames'])
-            test_data.append({
-                'video': video,
-                'start_frame': 0,
-                'end_frame': frames_to_take - 1,
-                'frames_to_use': frames_to_take,
-                'label': 'normal'
-            })
-            needed -= frames_to_take
-            used_normal_videos.add(video['path'])
-    
-    # 1) 특징추출용 데이터 (남은 정상 데이터로, 카테고리 균등)
-    remaining_normal = [v for v in all_normal_videos if v['path'] not in used_normal_videos]
-    
-    # 카테고리별로 재그룹화
-    remaining_by_category = defaultdict(list)
-    for video in remaining_normal:
-        remaining_by_category[video['category']].append(video)
-    
-    feature_data = []
-    feature_frames_needed = split_sizes['feature_total']
-    categories = list(remaining_by_category.keys())
-    frames_per_category = feature_frames_needed // len(categories)
-    
-    print(f"\n특징추출용 데이터 분할 (카테고리당 {frames_per_category:,} 프레임)...")
-    
-    for category in categories:
-        current_frames = 0
-        random.shuffle(remaining_by_category[category])
+        # 이상 데이터 수집 및 annotation 정보 추출
+        if os.path.exists(self.abnormal_data_path):
+            for file in os.listdir(self.abnormal_data_path):
+                if file.endswith('.mp4'):
+                    abnormal_files.append(file)
+                    
+                    # 해당하는 XML 파일 찾기
+                    xml_file = file.replace('.mp4', '.xml')
+                    xml_path = os.path.join(self.abnormal_label_path, xml_file)
+                    
+                    if os.path.exists(xml_path):
+                        theft_start, theft_end, total_frames = self.parse_xml_for_theft_frames(xml_path)
+                        abnormal_annotations[file] = {
+                            'theft_start': theft_start,
+                            'theft_end': theft_end,
+                            'total_frames': total_frames
+                        }
+                    else:
+                        print(f"XML 파일을 찾을 수 없음: {xml_path}")
         
-        for video in remaining_by_category[category]:
-            if current_frames >= frames_per_category:
-                break
-            
-            needed_frames = min(frames_per_category - current_frames, video['frames'])
-            
-            feature_data.append({
-                'video': video,
-                'frames_to_use': needed_frames,
-                'start_frame': 0,
-                'end_frame': needed_frames - 1,
-                'label': 'normal'
-            })
-            
-            current_frames += needed_frames
-            
-            if current_frames >= frames_per_category:
-                break
+        return normal_files, abnormal_files, abnormal_annotations
     
-    return feature_data, mlp_data, test_data
-
-def save_data_splits(feature_data, mlp_data, test_data, output_dir):
-    """분할된 데이터를 저장합니다."""
-    print("\n데이터 분할 결과 저장 중...")
-    
-    # 기존 디렉토리 제거 후 재생성
-    if os.path.exists(output_dir):
-        shutil.rmtree(output_dir)
-    
-    feature_dir = os.path.join(output_dir, "train_feature")
-    mlp_dir = os.path.join(output_dir, "train_mlp")
-    test_dir = os.path.join(output_dir, "test")
-    
-    os.makedirs(feature_dir, exist_ok=True)
-    os.makedirs(mlp_dir, exist_ok=True)
-    os.makedirs(test_dir, exist_ok=True)
-    
-    def save_split_info(data, split_dir, split_name):
-        info_file = os.path.join(split_dir, f"{split_name}_info.json")
+    def distribute_normal_files_evenly(self, total_needed):
+        """6개 카테고리에서 균등하게 파일 선택"""
+        if not hasattr(self, 'category_files') or not hasattr(self, 'categories'):
+            return []
         
-        split_info = {
-            'total_videos': len(set(item['video']['path'] for item in data)),
-            'total_frames': sum(item['frames_to_use'] for item in data),
-            'normal_frames': sum(item['frames_to_use'] for item in data if item['label'] == 'normal'),
-            'abnormal_frames': sum(item['frames_to_use'] for item in data if item['label'] == 'abnormal'),
-            'data': []
+        # 반품 카테고리 특별 처리 (41개씩 각 폴더에 배분)
+        special_category = "TS_02.구매행동_05.반품_2"
+        special_allocation = 41
+        
+        files_per_category = total_needed // len(self.categories)
+        remaining_files = total_needed % len(self.categories)
+        
+        selected_files = []
+        category_usage = {}  # 각 카테고리별 사용된 파일 수 추적
+        
+        for i, category in enumerate(self.categories):
+            # 반품 카테고리는 항상 41개씩 할당
+            if category == special_category:
+                needed_from_category = special_allocation
+            else:
+                # 기본 할당량 + 나머지 분배 (반품 제외한 나머지 카테고리에 분배)
+                remaining_categories = len(self.categories) - 1  # 반품 제외
+                adjusted_total = total_needed - special_allocation  # 반품 할당분 제외
+                needed_from_category = adjusted_total // remaining_categories
+                if i < (adjusted_total % remaining_categories):
+                    needed_from_category += 1
+            
+            # 이미 사용된 파일 수 확인
+            used_count = category_usage.get(category, 0)
+            available_files = self.category_files[category][used_count:]
+            
+            # 필요한 만큼 선택
+            selected_count = min(needed_from_category, len(available_files))
+            selected = available_files[:selected_count]
+            
+            selected_files.extend(selected)
+            category_usage[category] = used_count + selected_count
+            
+            print(f"카테고리 {category}: {selected_count}개 선택 (총 사용: {category_usage[category]}개)")
+        
+        # 전역 사용량 업데이트
+        if not hasattr(self, 'global_category_usage'):
+            self.global_category_usage = {}
+        
+        for category in category_usage:
+            if category not in self.global_category_usage:
+                self.global_category_usage[category] = 0
+            self.global_category_usage[category] += category_usage[category]
+            # 사용된 파일들을 리스트에서 제거하여 중복 방지
+            self.category_files[category] = self.category_files[category][category_usage[category]:]
+        
+        return selected_files
+    
+    def split_data(self):
+        """데이터를 train, mlp_train, test로 분할"""
+        normal_files, abnormal_files, abnormal_annotations = self.get_all_files()
+        
+        print(f"정상 데이터: {len(normal_files)}개")
+        print(f"이상 데이터: {len(abnormal_files)}개")
+        
+        # 모든 이상 데이터 사용
+        total_abnormal = len(abnormal_files)
+        
+        # mlp_train: 정상 5 : 이상 5
+        # test: 정상 6 : 이상 4
+        # 이상 데이터를 mlp_train과 test로 나누기 (5:4 비율)
+        mlp_abnormal_count = int(total_abnormal * 5 / 9)
+        test_abnormal_count = total_abnormal - mlp_abnormal_count
+        
+        # 정상 데이터 개수 계산
+        mlp_normal_count = mlp_abnormal_count  # 5:5 비율
+        test_normal_count = int(test_abnormal_count * 6 / 4)  # 6:4 비율
+        train_normal_count = mlp_normal_count + test_normal_count  # 요구사항: train = mlp_train + test 개수
+        
+        print(f"\n분할 계획:")
+        print(f"MLP Train - 정상: {mlp_normal_count}, 이상: {mlp_abnormal_count}")
+        print(f"Test - 정상: {test_normal_count}, 이상: {test_abnormal_count}")
+        print(f"Train - 정상: {train_normal_count}")
+        
+        # 이상 데이터 셔플 및 분할 (중복 방지)
+        random.shuffle(abnormal_files)
+        mlp_abnormal = abnormal_files[:mlp_abnormal_count]
+        test_abnormal = abnormal_files[mlp_abnormal_count:mlp_abnormal_count + test_abnormal_count]
+        
+        # 이상 데이터 개수 확인
+        print(f"실제 이상 데이터 분할:")
+        print(f"MLP Train 이상: {len(mlp_abnormal)}개")
+        print(f"Test 이상: {len(test_abnormal)}개")
+        print(f"총 이상 데이터 사용: {len(mlp_abnormal) + len(test_abnormal)}개 / {total_abnormal}개")
+        
+        # 정상 데이터 균등 분배
+        print(f"\n정상 데이터 균등 분배:")
+        print("=== MLP Train용 정상 데이터 ===")
+        mlp_normal = self.distribute_normal_files_evenly(mlp_normal_count)
+        
+        print("\n=== Test용 정상 데이터 ===")
+        test_normal = self.distribute_normal_files_evenly(test_normal_count)
+        
+        print("\n=== Train용 정상 데이터 ===")
+        train_normal = self.distribute_normal_files_evenly(train_normal_count)
+        
+        return {
+            'mlp_train': {'normal': mlp_normal, 'abnormal': mlp_abnormal},
+            'test': {'normal': test_normal, 'abnormal': test_abnormal},
+            'train': {'normal': train_normal, 'abnormal': []},
+            'annotations': abnormal_annotations
+        }
+    
+    def save_data_splits_and_create_gt(self, data_split):
+        """데이터 분할 정보를 JSON으로 저장하고 GT 파일 생성"""
+        annotations = data_split['annotations']
+        
+        # JSON 데이터 구조 생성
+        json_data = {}
+        
+        # MLP Train 데이터 처리
+        print("\nMLP Train 데이터 JSON 생성 및 GT 생성 중...")
+        mlp_train_data = {
+            'normal': [],
+            'abnormal': []
         }
         
-        # 카테고리별 통계
-        category_stats = {}
-        for item in data:
-            category = item['video'].get('category', 'UNKNOWN')
-            if category not in category_stats:
-                category_stats[category] = {'normal': 0, 'abnormal': 0, 'videos': set()}
+        # 정상 데이터 처리
+        for file_path in data_split['mlp_train']['normal']:
+            src = os.path.join(self.normal_data_path, file_path)
+            filename = os.path.basename(file_path)
             
-            category_stats[category][item['label']] += item['frames_to_use']
-            category_stats[category]['videos'].add(item['video']['path'])
+            if os.path.exists(src):
+                # JSON에 파일 정보 추가
+                mlp_train_data['normal'].append({
+                    'filename': filename,
+                    'full_path': src,
+                    'relative_path': file_path,
+                    'label': 0  # 정상 데이터
+                })
+                
+                # GT 파일 생성 (정상 데이터)
+                frame_count = self.get_video_frame_count(src)
+                gt_labels = self.create_ground_truth_labels(filename, None, None, frame_count, is_normal=True)
+                gt_file = os.path.join(self.mlp_train_gt_path, filename.replace('.mp4', '.npy'))
+                np.save(gt_file, gt_labels)
         
-        for item in data:
-            split_info['data'].append({
-                'video_path': item['video']['path'],
-                'start_frame': item['start_frame'],
-                'end_frame': item['end_frame'],
-                'frames_to_use': item['frames_to_use'],
-                'label': item['label'],
-                'category': item['video'].get('category', 'UNKNOWN')
-            })
+        # 이상 데이터 처리
+        for file in data_split['mlp_train']['abnormal']:
+            src = os.path.join(self.abnormal_data_path, file)
+            
+            if os.path.exists(src):
+                # 어노테이션 정보 가져오기
+                ann_info = annotations.get(file, {})
+                
+                # JSON에 파일 정보 추가
+                mlp_train_data['abnormal'].append({
+                    'filename': file,
+                    'full_path': src,
+                    'label': 1,  # 이상 데이터
+                    'theft_start': ann_info.get('theft_start'),
+                    'theft_end': ann_info.get('theft_end'),
+                    'total_frames': ann_info.get('total_frames', 0)
+                })
+                
+                # GT 파일 생성 (이상 데이터)
+                if file in annotations:
+                    ann = annotations[file]
+                    frame_count = self.get_video_frame_count(src)
+                    gt_labels = self.create_ground_truth_labels(
+                        file, ann['theft_start'], ann['theft_end'], frame_count, is_normal=False
+                    )
+                    gt_file = os.path.join(self.mlp_train_gt_path, file.replace('.mp4', '.npy'))
+                    np.save(gt_file, gt_labels)
         
-        with open(info_file, 'w', encoding='utf-8') as f:
-            json.dump(split_info, f, indent=2, ensure_ascii=False)
+        # MLP Train JSON 저장
+        with open(self.mlp_train_json, 'w', encoding='utf-8') as f:
+            json.dump(mlp_train_data, f, ensure_ascii=False, indent=2)
         
-        print(f"\n{split_name} 저장 완료:")
-        print(f"  - 총 비디오: {split_info['total_videos']}개")
-        print(f"  - 총 프레임: {split_info['total_frames']:,}개")
-        print(f"  - 정상 프레임: {split_info['normal_frames']:,}개")
-        print(f"  - 도난 프레임: {split_info['abnormal_frames']:,}개")
-        if split_info['abnormal_frames'] > 0:
-            ratio = split_info['normal_frames'] / split_info['abnormal_frames']
-            print(f"  - 정상:도난 비율: {ratio:.1f}:1")
+        # Test 데이터 처리
+        print("Test 데이터 JSON 생성 및 GT 생성 중...")
+        test_data = {
+            'normal': [],
+            'abnormal': []
+        }
         
-        print(f"  - 카테고리별 분포:")
-        for category, stats in sorted(category_stats.items()):
-            total_cat_frames = stats['normal'] + stats['abnormal']
-            print(f"    {category}: {len(stats['videos'])}개 비디오, "
-                  f"{total_cat_frames:,}프레임 (정상:{stats['normal']:,}, 도난:{stats['abnormal']:,})")
+        # 정상 데이터 처리
+        for file_path in data_split['test']['normal']:
+            src = os.path.join(self.normal_data_path, file_path)
+            filename = os.path.basename(file_path)
+            
+            if os.path.exists(src):
+                # JSON에 파일 정보 추가
+                test_data['normal'].append({
+                    'filename': filename,
+                    'full_path': src,
+                    'relative_path': file_path,
+                    'label': 0  # 정상 데이터
+                })
+                
+                # GT 파일 생성 (정상 데이터)
+                frame_count = self.get_video_frame_count(src)
+                gt_labels = self.create_ground_truth_labels(filename, None, None, frame_count, is_normal=True)
+                gt_file = os.path.join(self.test_gt_path, filename.replace('.mp4', '.npy'))
+                np.save(gt_file, gt_labels)
+        
+        # 이상 데이터 처리
+        for file in data_split['test']['abnormal']:
+            src = os.path.join(self.abnormal_data_path, file)
+            
+            if os.path.exists(src):
+                # 어노테이션 정보 가져오기
+                ann_info = annotations.get(file, {})
+                
+                # JSON에 파일 정보 추가
+                test_data['abnormal'].append({
+                    'filename': file,
+                    'full_path': src,
+                    'label': 1,  # 이상 데이터
+                    'theft_start': ann_info.get('theft_start'),
+                    'theft_end': ann_info.get('theft_end'),
+                    'total_frames': ann_info.get('total_frames', 0)
+                })
+                
+                # GT 파일 생성 (이상 데이터)
+                if file in annotations:
+                    ann = annotations[file]
+                    frame_count = self.get_video_frame_count(src)
+                    gt_labels = self.create_ground_truth_labels(
+                        file, ann['theft_start'], ann['theft_end'], frame_count, is_normal=False
+                    )
+                    gt_file = os.path.join(self.test_gt_path, file.replace('.mp4', '.npy'))
+                    np.save(gt_file, gt_labels)
+        
+        # Test JSON 저장
+        with open(self.test_json, 'w', encoding='utf-8') as f:
+            json.dump(test_data, f, ensure_ascii=False, indent=2)
+        
+        # Train 데이터 처리 (정상 데이터만)
+        print("Train 데이터 JSON 생성 중...")
+        train_data = {
+            'normal': [],
+            'abnormal': []
+        }
+        
+        # 정상 데이터 처리
+        for file_path in data_split['train']['normal']:
+            src = os.path.join(self.normal_data_path, file_path)
+            filename = os.path.basename(file_path)
+            
+            if os.path.exists(src):
+                # JSON에 파일 정보 추가
+                train_data['normal'].append({
+                    'filename': filename,
+                    'full_path': src,
+                    'relative_path': file_path,
+                    'label': 0  # 정상 데이터
+                })
+        
+        # Train JSON 저장
+        with open(self.train_json, 'w', encoding='utf-8') as f:
+            json.dump(train_data, f, ensure_ascii=False, indent=2)
+        
+        # 요약 정보 출력
+        print(f"\n=== 데이터 분할 결과 ===")
+        print(f"MLP Train: 정상 {len(mlp_train_data['normal'])}개, 이상 {len(mlp_train_data['abnormal'])}개")
+        print(f"Test: 정상 {len(test_data['normal'])}개, 이상 {len(test_data['abnormal'])}개")
+        print(f"Train: 정상 {len(train_data['normal'])}개")
+        print(f"\nJSON 파일 저장 위치:")
+        print(f"- {self.mlp_train_json}")
+        print(f"- {self.test_json}")
+        print(f"- {self.train_json}")
+        print(f"\nGT 파일 저장 위치:")
+        print(f"- {self.mlp_train_gt_path}")
+        print(f"- {self.test_gt_path}")
     
-    save_split_info(feature_data, feature_dir, "feature_extraction")
-    save_split_info(mlp_data, mlp_dir, "mlp_training")
-    save_split_info(test_data, test_dir, "test")
+    def run(self):
+        """전체 데이터 분할 프로세스 실행"""
+        print("데이터 분할 프로세스 시작...")
+        
+        # 출력 디렉토리 생성
+        self.create_output_directories()
+        
+        # 데이터 분할
+        data_split = self.split_data()
+        
+        # JSON 파일 저장 및 GT 생성
+        self.save_data_splits_and_create_gt(data_split)
+        
+        print("\n데이터 분할 완료!")
+        print(f"결과는 {self.output_base_path} 폴더에 저장되었습니다.")
+        print("- JSON 파일: 각 데이터셋의 파일 경로와 메타데이터")
+        print("- GT 폴더: Ground Truth 라벨 파일들 (.npy 형식)")
 
-def main():
-    print("="*60)
-    print("균형잡힌 도난 탐지 데이터 분할")
-    print("="*60)
-    
-    # 1. 데이터 수집
-    normal_videos = collect_normal_videos()
-    abnormal_videos = collect_abnormal_videos()
-    
-    print(f"\n수집된 데이터:")
-    print(f"정상 비디오: {len(normal_videos)}개")
-    print(f"이상 비디오: {len(abnormal_videos)}개")
-    
-    # 2. 균형잡힌 분할 크기 계산
-    split_sizes = calculate_balanced_split_sizes()
-    
-    # 3. 데이터 분할
-    feature_data, mlp_data, test_data = split_data_balanced(
-        normal_videos, abnormal_videos, split_sizes)
-    
-    # 4. 결과 저장
-    output_dir = "data_splits_balanced"
-    save_data_splits(feature_data, mlp_data, test_data, output_dir)
-    
-    print("\n" + "="*60)
-    print("균형잡힌 데이터 분할 완료!")
-    print("="*60)
 
 if __name__ == "__main__":
-    main()
+    # 랜덤 시드 설정
+    random.seed(42)
+    
+    # 데이터 분할 실행
+    splitter = DataSplitter()
+    splitter.run()
