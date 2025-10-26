@@ -47,6 +47,7 @@ videos/
 *.avi
 *.csv
 *.json
+*.npy
 
 # 2. AI 모델 파일 (AI Model Files)
 models/

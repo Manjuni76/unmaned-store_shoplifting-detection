@@ -1,1 +1,0 @@
-# 부위별 STG-NF 모델 학습 후 freeze
