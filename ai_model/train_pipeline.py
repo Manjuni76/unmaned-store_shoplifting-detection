@@ -17,10 +17,10 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 from tqdm import tqdm
 
-# STG-NF_AI-HUB 경로 추가
-stg_nf_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'STG-NF_AI-HUB'))
-if stg_nf_path not in sys.path:
-    sys.path.insert(0, stg_nf_path)
+# Add model path to sys.path
+model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'model'))
+if model_path not in sys.path:
+    sys.path.insert(0, model_path)
 
 # 관절 부위별 매핑 딕셔너리 (COCO-18 기준)
 COCO18_ARMS = [2, 3, 4, 5, 6, 7]
@@ -48,9 +48,9 @@ JOINT_SUBSET_MAP = {
     'all': None
 }
 
-# STG-NF 모델 import는 나중에 필요할 때
+# STG-NF 모델 import
 try:
-    from models.STG_NF.model_pose import STG_NF  # type: ignore
+    from stg_nf import STG_NF
     print("[SUCCESS] STG-NF 모델 import 성공")
 except ImportError as e:
     print(f"[WARNING] STG-NF 모델 import 실패: {e}")
@@ -269,7 +269,7 @@ def train_stg_nf(args):
     global STG_NF
     if STG_NF is None:
         try:
-            from models.STG_NF.model_pose import STG_NF  # type: ignore
+            from stg_nf import STG_NF
             print("[SUCCESS] STG-NF 모델 런타임 import 성공")
         except ImportError as e:
             raise ImportError(f"STG-NF 모델을 import할 수 없습니다: {e}")
