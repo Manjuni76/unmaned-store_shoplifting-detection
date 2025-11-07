@@ -17,10 +17,12 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.metrics import roc_auc_score, precision_recall_curve, auc
 from tqdm import tqdm
 
-# Add model path to sys.path
-model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'model'))
-if model_path not in sys.path:
-    sys.path.insert(0, model_path)
+# Use utility for path setup
+sys.path.insert(0, os.path.dirname(__file__))
+from utils import setup_model_path
+
+# Setup model path
+setup_model_path()
 
 # 관절 부위별 매핑 딕셔너리 (COCO-18 기준)
 COCO18_ARMS = [2, 3, 4, 5, 6, 7]

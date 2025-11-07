@@ -5,8 +5,12 @@ This script tests basic model functionality without requiring full dataset
 import sys
 import os
 
-# Add paths
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'model'))
+# Use utility function for path setup
+sys.path.insert(0, os.path.dirname(__file__))
+from utils import setup_model_path
+
+# Setup model path
+setup_model_path()
 
 def test_model_import():
     """Test that STG-NF model can be imported"""

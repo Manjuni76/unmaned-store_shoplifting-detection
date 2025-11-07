@@ -50,6 +50,9 @@ class STG_NF(nn.Module):
         # Feature dimension after pooling
         self.feature_dim = 256
         
+        # Pre-compute constant for loss computation
+        self.log_2pi = np.log(2 * np.pi)
+        
     def encode(self, x):
         """
         Encode input pose sequence to latent representation
@@ -57,7 +60,12 @@ class STG_NF(nn.Module):
             x: (B, C, T, V) pose sequence
         Returns:
             z: (B, feature_dim) latent features
-            log_det: log determinant (dummy for compatibility)
+            log_det: log determinant (placeholder for compatibility)
+        
+        Note: This is a simplified implementation. A full normalizing flow
+        would compute the actual log determinant of the Jacobian for each
+        transformation layer. This placeholder returns zeros for compatibility
+        with the training pipeline.
         """
         B = x.size(0)
         
@@ -68,7 +76,9 @@ class STG_NF(nn.Module):
         z = self.adaptive_pool(features)  # (B, 256, 1, 1)
         z = z.view(B, -1)  # (B, 256)
         
-        # Dummy log determinant for compatibility
+        # Placeholder log determinant for compatibility
+        # In a full NF implementation, this would be the sum of log determinants
+        # from all invertible transformation layers
         log_det = torch.zeros(B, device=x.device)
         
         return z, log_det
@@ -95,7 +105,8 @@ class STG_NF(nn.Module):
         """
         # Assume standard normal prior: p(z) = N(0, I)
         # log p(z) = -0.5 * (z^2 + log(2*pi))
-        log_pz = -0.5 * torch.sum(z ** 2, dim=1) - 0.5 * z.size(1) * np.log(2 * np.pi)
+        # Use pre-computed log(2*pi) constant
+        log_pz = -0.5 * torch.sum(z ** 2, dim=1) - 0.5 * z.size(1) * self.log_2pi
         
         # log p(x) = log p(z) + log |det(dz/dx)|
         log_px = log_pz + log_det
