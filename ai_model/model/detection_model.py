@@ -1,1 +1,0 @@
-#STG-NF Freeze 모델로 특징 추출 후 MLP 학습

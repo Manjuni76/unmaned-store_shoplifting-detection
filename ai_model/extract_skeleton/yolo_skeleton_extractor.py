@@ -20,13 +20,15 @@ class YOLOSkeletonExtractor:
         """
         self.conf_threshold = conf_threshold
         self.kpt_threshold = kpt_threshold
-        self.device = torch.device('cuda')  # 강제로 CUDA 사용
+        # CUDA 사용 가능하면 GPU, 아니면 CPU
+        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         print(f"Using device: {self.device}")
         
         # YOLO Pose 모델 로드
         try:
             self.model = YOLO(model_path)
-            self.model.to(self.device)  # 모델을 GPU로 이동
+            if torch.cuda.is_available():
+                self.model.to(self.device)  # GPU가 있으면 모델을 GPU로 이동
             print(f"YOLO Pose model loaded: {model_path}")
         except Exception as e:
             print(f"Error loading model: {e}")

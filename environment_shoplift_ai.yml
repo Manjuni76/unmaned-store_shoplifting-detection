@@ -1,0 +1,29 @@
+name: shoplift_ai
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - opencv
+  - pillow
+  - tqdm
+  - pip:
+    - ultralytics==8.3.203
+    - opencv-python==4.7.0.72
+    - tqdm==4.67.1
+
+# Note: PyTorch is required by this project but CUDA/nightly installs are intentionally
+# excluded from this file. Please install PyTorch separately depending on your system:
+# For CPU-only (recommended when you want to avoid CUDA/nightly):
+#   conda install pytorch torchvision torchaudio cpuonly -c pytorch -c conda-forge
+# For CUDA (choose appropriate CUDA toolchain; not included here per request):
+#   conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# After creating the environment, install PyTorch using one of the above commands.
