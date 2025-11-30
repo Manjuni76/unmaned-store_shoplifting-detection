@@ -1,0 +1,33 @@
+# 웹 서버
+fastapi==0.109.0
+uvicorn==0.27.0
+python-multipart==0.0.6
+jinja2==3.1.3
+python-dotenv==1.0.0
+
+# Celery & Redis
+celery==5.3.6
+redis==5.0.1
+
+# AWS S3
+boto3==1.34.34
+
+# AI 관련 (dog_det 환경과 동일 - RTX 5080 지원)
+torch==2.8.0
+torchvision==0.23.0
+ultralytics==8.3.203
+opencv-python==4.9.0.80
+numpy==1.24.3
+scikit-learn==1.4.0
+tqdm==4.66.1
+matplotlib==3.8.2
+seaborn==0.13.1
+
+# ultralytics 의존성
+pillow
+pyyaml
+requests
+scipy
+psutil
+polars
+ultralytics-thop

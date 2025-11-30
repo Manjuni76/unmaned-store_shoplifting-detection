@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  # 1. Redis (메시지 브로커)
+  redis:
+    image: redis:7-alpine
+    container_name: shoplifting_redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # 2. Backend (FastAPI)
+  backend:
+    build: .
+    container_name: shoplifting_backend
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8001:8000"  # 외부 8001 → 컨테이너 내부 8000
+    volumes:
+      - ./backend/test.db:/app/backend/test.db
+      - ./backend:/app/backend
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # 3. AI Worker (Celery + GPU)
+  ai-worker:
+    build: .
+    container_name: shoplifting_ai_worker
+    command: celery -A ai_server.celery_app worker --loglevel=info --concurrency=1 --pool=solo
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./ai_model:/app/ai_model
+      - ./ai_server:/app/ai_server
+      - ./backend/test.db:/app/backend/test.db
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

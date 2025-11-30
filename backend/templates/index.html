@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도난 탐지 시스템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            background: linear-gradient(to bottom, #e3f2fd, #f5f5f5);
+            min-height: 100vh;
+        }
+        .hero-section { 
+            background: linear-gradient(135deg, #1565c0, #1976d2, #42a5f5); 
+            color: white; 
+            padding: 60px 0; 
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .upload-card { 
+            border: none; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 20px rgba(21,101,192,0.1);
+            background: white;
+        }
+        .result-card { 
+            display: none; 
+            border: none; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 20px rgba(21,101,192,0.1);
+            background: white;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #0d47a1, #1565c0);
+        }
+        .time-badge { cursor: pointer; transition: 0.2s; }
+        .time-badge:hover { transform: scale(1.1); }
+        .loader-area { display: none; }
+        .spinner-border { color: #1976d2 !important; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold"><i class="fas fa-user-secret"></i> 도난 탐지 시스템</h1>
+            <p class="lead">CCTV 영상을 업로드하면 자동으로 도난 행동을 탐지합니다.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                
+                <div class="card upload-card p-4" id="uploadCard">
+                    <div class="card-body text-center">
+                        <h3 class="card-title mb-4">영상 분석 요청</h3>
+                        <form id="uploadForm">
+                            <div class="mb-3">
+                                <label for="videoFile" class="form-label text-muted">분석할 CCTV 영상 파일 (.mp4)</label>
+                                <input class="form-control form-control-lg" type="file" id="videoFile" name="video_file" accept="video/*" required>
+                            </div>
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-upload"></i> 분석 시작하기
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="text-center loader-area my-5" id="loaderArea">
+                    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h4 class="mt-3 text-secondary" id="statusText">영상을 서버로 전송 중입니다...</h4>
+                    <p class="text-muted">영상 길이에 따라 시간이 소요될 수 있습니다.</p>
+                    <input type="hidden" id="jobIdInput">
+                </div>
+
+                <div class="card result-card mb-5" id="resultCard">
+                    <div class="card-header bg-white border-bottom-0 pt-4 pb-0">
+                        <h3 class="fw-bold"><i class="fas fa-chart-bar"></i> 분석 결과 리포트</h3>
+                    </div>
+                    <div class="card-body">
+                        
+                        <div id="statusAlert" class="alert alert-success text-center fw-bold" role="alert">
+                            분석 완료
+                        </div>
+
+                        <div class="ratio ratio-16x9 mb-4 bg-dark rounded overflow-hidden">
+                            <div id="videoContainer" class="d-flex align-items-center justify-content-center text-white">
+                                비디오를 불러오는 중...
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="border-bottom pb-2">🚩 탐지된 도난 행동 구간</h5>
+                                <div id="detectionLog" class="p-3 bg-light rounded text-muted">
+                                    탐지된 내역이 없습니다.
+                                </div>
+                                <small class="text-muted mt-2 d-block">* 위 시간을 클릭하면 해당 구간을 확인할 수 있습니다.</small>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="btn btn-outline-secondary" onclick="location.reload()">
+                                <i class="fas fa-redo"></i> 다른 영상 분석하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadCard = document.getElementById('uploadCard');
+        const loaderArea = document.getElementById('loaderArea');
+        const resultCard = document.getElementById('resultCard');
+        const statusText = document.getElementById('statusText');
+        const jobIdInput = document.getElementById('jobIdInput');
+
+        uploadForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); 
+            
+            const formData = new FormData(uploadForm);
+            
+            uploadCard.style.display = 'none';
+            loaderArea.style.display = 'block';
+            statusText.textContent = '영상을 클라우드 서버로 업로드 중...';
+            
+            try {
+                const response = await fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                if (!response.ok) {
+                    const errData = await response.json();
+                    throw new Error(errData.detail || '서버 오류');
+                }
+
+                const data = await response.json();
+                
+                if(data.job_id) {
+                    jobIdInput.value = data.job_id;
+                    statusText.textContent = '영상 분석 중... (잠시만 기다려주세요)';
+                    checkStatus(); 
+                } else {
+                    throw new Error('Job ID를 받지 못했습니다.');
+                }
+            } catch (err) {
+                alert('오류 발생: ' + err.message);
+                location.reload();
+            }
+        });
+
+        function checkStatus() {
+            const jobId = jobIdInput.value;
+            
+            fetch(`/status/${jobId}`)
+                .then(response => response.json())
+                .then(data => {
+                    
+                    if (data.status === 'COMPLETED') {
+                        loaderArea.style.display = 'none';
+                        resultCard.style.display = 'block';
+                        renderResult(data);
+                    } else if (data.status === 'PENDING' || data.status === 'PROCESSING') {
+                        setTimeout(checkStatus, 2000);
+                    } else {
+                        alert('분석 실패: ' + JSON.stringify(data));
+                        location.reload();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    statusText.textContent = '상태 확인 중 통신 오류... 재시도 중';
+                    setTimeout(checkStatus, 3000);
+                });
+        }
+
+        function seekToTime(seconds) {
+            const videoPlayer = document.querySelector('video');
+            if (videoPlayer) {
+                videoPlayer.currentTime = seconds;
+                videoPlayer.play();
+            }
+        }
+
+        function renderResult(data) {
+            const statusAlert = document.getElementById('statusAlert');
+            const videoContainer = document.getElementById('videoContainer');
+            const detectionLog = document.getElementById('detectionLog');
+
+            const riskLevel = data.risk_level || '알 수 없음';
+            const riskColor = data.risk_color || 'secondary';
+            const maxScore = data.max_score || 0.0;
+            
+            const colorClass = {
+                'success': 'alert-success',
+                'warning': 'alert-warning',
+                'danger': 'alert-danger',
+                'secondary': 'alert-secondary'
+            }[riskColor] || 'alert-secondary';
+            
+            statusAlert.className = `alert ${colorClass} text-center fw-bold`;
+            statusAlert.innerHTML = `
+                <i class="fas ${riskColor === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i> 
+                위험도: ${riskLevel} (최고 점수: ${(maxScore * 100).toFixed(1)}%)
+            `;
+
+            if (data.result_url) {
+                videoContainer.innerHTML = `
+                    <video id="mainVideo" width="100%" height="100%" controls autoplay muted>
+                        <source src="${data.result_url}" type="video/mp4">
+                        브라우저가 비디오를 지원하지 않습니다.
+                    </video>
+                `;
+            }
+
+            if (data.result_text) {
+                try {
+                    const segments = JSON.parse(data.result_text);
+                    if (Array.isArray(segments) && segments.length > 0) {
+                        let badgesHtml = segments.map((seg, idx) => {
+                            const scorePercent = (seg.max_score * 100).toFixed(1);
+                            let badgeColor = 'secondary';
+                            if (seg.max_score >= 0.98) badgeColor = 'danger';
+                            else if (seg.max_score >= 0.92) badgeColor = 'warning';
+                            else if (seg.max_score >= 0.80) badgeColor = 'info';
+                            
+                            return `<button class="btn badge bg-${badgeColor} me-2 mb-2 time-badge fs-6" onclick="seekToTime(${seg.start_time})">
+                                <i class="fas fa-video"></i> 구간 ${idx + 1}: ${seg.start_time}초 ~ ${seg.end_time}초 (${scorePercent}%)
+                            </button>`;
+                        }).join('');
+                        
+                        detectionLog.innerHTML = badgesHtml;
+                    } else {
+                        detectionLog.innerHTML = `<span class="text-success"><i class="fas fa-shield-alt"></i> 도난 의심 구간 X.</span>`;
+                    }
+                } catch (e) {
+                    detectionLog.textContent = "데이터 파싱 오류: " + data.result_text;
+                }
+            } else {
+                detectionLog.innerHTML = `<span class="text-success"><i class="fas fa-shield-alt"></i> 도난 의심 구간 X.</span>`;
+            }
+        }
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
