@@ -30,13 +30,13 @@ services:
     depends_on:
       redis:
         condition: service_healthy
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+    #deploy:
+      #resources:
+        #reservations:
+          #devices:
+            #- driver: nvidia
+             # count: 1
+              #capabilities: [gpu]
 
   # 3. AI Worker (Celery + GPU)
   ai-worker:
@@ -54,10 +54,10 @@ services:
     depends_on:
       redis:
         condition: service_healthy
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+   # deploy:
+      #resources:
+        #reservations:
+          #devices:
+            #- driver: nvidia
+             # count: 1
+              #capabilities: [gpu]

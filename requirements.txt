@@ -13,8 +13,7 @@ redis==5.0.1
 boto3==1.34.34
 
 # AI 관련 (dog_det 환경과 동일 - RTX 5080 지원)
-torch==2.8.0
-torchvision==0.23.0
+#cpu 버전으로 torch==2.8.0,torchvision==0.23.0 설정 x
 ultralytics==8.3.203
 opencv-python==4.9.0.80
 numpy==1.24.3
@@ -22,6 +21,8 @@ scikit-learn==1.4.0
 tqdm==4.66.1
 matplotlib==3.8.2
 seaborn==0.13.1
+
+
 
 # ultralytics 의존성
 pillow

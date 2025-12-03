@@ -1,11 +1,11 @@
 # 무인매장 도난 탐지 시스템 (Unmanned Store Shoplifting Detection)
 
 ## 프로젝트 개요
-STG-NF(Spatial-Temporal Graph Normalizing Flow)와 Attention Classifier를 결합한 skeleton 기반 도난 행동 탐지 시스템입니다.
+부위 별 STG-NF(Spatial-Temporal Graph Normalizing Flow)모델과 Attention Classifier를 결합한 skeleton pose 기반 도난 행동 탐지 시스템입니다.
 
 ### 주요 특징
-- **STG-NF**: 정상 패턴만 학습하는 One-Class 이상 탐지
-- **부위별 분석**: 머리, 팔, 몸, 다리, 전체 5개 부위 독립 분석
+- **STG-NF**: 정상 패턴만 학습하는 비지도 학습 방식
+- **부위별 분석**: 머리, 팔, 몸, 다리, 전체 5개 부위 별 특징 학습
 - **Attention Fusion**: 부위별 특징을 Attention으로 통합하여 최종 판별
 - **프레임 단위 탐지**: 도난 발생 정확한 시점(초) 추출
 - **실시간 배포**: FastAPI + Celery + Docker 기반 운영 시스템
@@ -73,7 +73,6 @@ python train_attention.py
 python eval_pipeline.py
 ```
 
-자세한 내용: [ai_model/README.md](ai_model/README.md)
 
 ### 2. 서버 배포 (Docker)
 ```bash
@@ -81,7 +80,7 @@ python eval_pipeline.py
 docker-compose up --build
 
 # 브라우저에서 접속
-http://localhost:8000
+http://localhost:8001
 ```
 
 자세한 내용: [DEPLOYMENT.md](DEPLOYMENT.md)

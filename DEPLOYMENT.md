@@ -219,8 +219,3 @@ docker-compose down --rmi all
 ```
 
 ---
-
-## 연락처 및 문의
-- 프로젝트 관련 문의: README 또는 ai_model/README.md 참고
-- 모델 학습/평가: ai_model/ 폴더 참고
-- 서버 배포: 이 문서(DEPLOYMENT.md) 참고
