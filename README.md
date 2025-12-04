@@ -23,34 +23,40 @@
 ---
 
 ## 폴더 구조
+```text
 unmaned_store_shoplifting_detection/
 │
-├── ai_model/              # AI 모델 학습 및 평가
-│   ├── args.py            # 전체 설정 (하이퍼파라미터, 경로)
-│   ├── train_stgnf.py     # STG-NF 학습
-│   ├── train_attention.py # Attention 분류기 학습
-│   ├── eval_stgnf.py      # STG-NF 평가
-│   ├── eval_pipeline.py   # 전체 파이프라인 평가
-│   ├── checkpoints/       # 학습된 모델 가중치
-│   ├── datasets/          # 데이터셋 로더
-│   ├── models/            # 모델 구조 정의
-│   └── extract_skeleton/  # YOLO skeleton 추출
+├── ai_model/                  # AI 모델 학습 및 평가 관련 코드
+│   ├── checkpoints/           # 학습된 모델 가중치 (.pth 파일)
+│   ├── datasets/              # 데이터셋 로더 및 전처리
+│   ├── extract_skeleton/      # YOLOv11 기반 스켈레톤 추출 로직
+│   ├── models/                # STG-NF 및 Attention 모델 아키텍처 정의
+│   ├── args.py                # 전체 설정 관리 (하이퍼파라미터, 경로 등)
+│   ├── eval_pipeline.py       # 전체 파이프라인 성능 평가 스크립트
+│   ├── eval_stgnf.py          # STG-NF 단독 성능 평가
+│   ├── train_attention.py     # Attention 분류기 학습 스크립트
+│   └── train_stgnf.py         # STG-NF 모델 학습 스크립트
 │
-├── ai_server/             # 추론 서버 (배포용)
-│   ├── celery_app.py      # Celery 설정
-│   ├── tasks.py           # 비동기 작업 처리
-│   └── inference.py       # 실제 추론 로직
+├── ai_server/                 # AI 추론 서버 (Celery Worker)
+│   ├── celery_app.py          # Celery 애플리케이션 설정
+│   ├── inference.py           # 핵심 추론 로직 (모델 로드 및 예측)
+│   └── tasks.py               # 비동기 작업(Task) 정의
 │
-├── backend/               # 웹 서버
-│   ├── main.py            # FastAPI 서버
-│   ├── database.py        # SQLite DB
-│   └── templates/         # HTML UI
+├── backend/                   # 웹 서버 (FastAPI)
+│   ├── templates/             # 웹 UI (HTML/JS)
+│   ├── database.py            # SQLite 데이터베이스 설정
+│   └── main.py                # FastAPI 엔트리포인트 및 API 라우터
 │
-└── data/                  # 학습/평가 데이터
-    ├── train_stgnf/       # STG-NF 학습용 (정상만)
-    ├── train_attention/   # Attention 학습용 (정상+이상)
-    ├── test/              # 평가용
-    └── gt/                # Ground Truth 라벨
+├── data/                      # 데이터셋 디렉토리
+│   ├── gt/                    # Ground Truth 라벨 파일
+│   ├── test/                  # 평가용 비디오 및 스켈레톤 데이터
+│   ├── train_attention/       # Attention 모델 학습용 데이터
+│   └── train_stgnf/           # STG-NF 모델 학습용 데이터 (정상 구간)
+│
+├── docker-compose.yml         # 전체 서비스 실행 설정 (Docker Compose)
+├── Dockerfile                 # 도커 이미지 빌드 설정
+├── requirements.txt           # 파이썬 의존성 패키지 목록
+└── README.md                  # 프로젝트 문서
 
 
 ---
