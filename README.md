@@ -58,6 +58,7 @@ unmaned_store_shoplifting_detection/
 ├── requirements.txt           # 파이썬 의존성 패키지 목록
 └── README.md                  # 프로젝트 문서
 
+'''
 
 ---
 
