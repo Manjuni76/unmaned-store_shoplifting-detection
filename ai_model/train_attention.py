@@ -351,7 +351,7 @@ def main():
         # 베스트 저장
         if val_f1 > best_val_f1:
             best_val_f1 = val_f1
-            save_path = os.path.join(Config.Path.CHECKPOINT_DIR, 'attention_best.pth')
+            save_path = os.path.join(Config.Path.CHECKPOINT_DIR, 'attention_fin.pth')
             torch.save({
                 'model_state_dict': attention_model.state_dict(),
                 'val_frame_f1': val_f1,
